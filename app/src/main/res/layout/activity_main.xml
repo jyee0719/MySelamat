@@ -24,11 +24,11 @@
         tools:layout_editor_absoluteY="502dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi Jiayu"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="120dp" />
+        android:text="werwerewer"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="161dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
