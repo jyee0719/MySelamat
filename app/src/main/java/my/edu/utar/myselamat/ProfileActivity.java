@@ -18,13 +18,13 @@ public class ProfileActivity extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.activity_profile, container, false);
 
-        Button register = (Button)findViewById(R.id.button7);
+        /*Button register = (Button)findViewById(R.id.button7);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ProfileActivity.this, ThankYou.class));
             }
-        });
+        });*/
     }
 
 }
