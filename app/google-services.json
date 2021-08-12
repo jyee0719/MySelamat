@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174967807463",
+    "project_id": "myselamat-7a4b2",
+    "storage_bucket": "myselamat-7a4b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174967807463:android:b842c2bb38546a450c7142",
+        "android_client_info": {
+          "package_name": "my.edu.utar.myselamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174967807463-bbof9dfpq9c7b8esh3hftmr8ft1qjaaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbPL7pSEEORvZ7R0yMgyOM-l-_oShjwEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174967807463-bbof9dfpq9c7b8esh3hftmr8ft1qjaaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
