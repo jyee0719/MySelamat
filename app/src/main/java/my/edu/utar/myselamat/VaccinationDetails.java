@@ -23,11 +23,6 @@ public class VaccinationDetails extends AppCompatActivity {
         dropdown.setAdapter(adapter);
 
         Button submit = (Button)findViewById(R.id.submit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(VaccinationDetails.this, ThankYou.class));
-            }
-        });
+        submit.setOnClickListener(v -> startActivity(new Intent(VaccinationDetails.this, ThankYou.class)));
     }
 }

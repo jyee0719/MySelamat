@@ -15,11 +15,6 @@ public class ThankYou extends AppCompatActivity {
         setContentView(R.layout.activity_thank_you);
 
         Button home = (Button)findViewById(R.id.button7);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ThankYou.this, HomeActivity.class));
-            }
-        });
+        home.setOnClickListener(v -> startActivity(new Intent(ThankYou.this, HomeActivity.class)));
     }
 }

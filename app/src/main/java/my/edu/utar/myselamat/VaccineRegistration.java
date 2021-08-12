@@ -15,11 +15,6 @@ public class VaccineRegistration extends AppCompatActivity {
         setContentView(R.layout.activity_vaccine_registration);
 
         Button next = (Button)findViewById(R.id.button);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(VaccineRegistration.this, VaccinationDetails.class));
-            }
-        });
+        next.setOnClickListener(v -> startActivity(new Intent(VaccineRegistration.this, VaccinationDetails.class)));
     }
 }
