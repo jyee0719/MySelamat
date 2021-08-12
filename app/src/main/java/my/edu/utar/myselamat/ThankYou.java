@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ThankYou extends AppCompatActivity {
 
@@ -21,5 +22,12 @@ public class ThankYou extends AppCompatActivity {
                 startActivity(new Intent(ThankYou.this, HomeActivity.class));
             }
         });
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            if(bundle.getString("some")!=null){
+                Toast.makeText(getApplicationContext(),"data: "+bundle.getString("some"), Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
