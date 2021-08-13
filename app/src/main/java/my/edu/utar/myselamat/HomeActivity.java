@@ -30,14 +30,13 @@ public class HomeActivity extends AppCompatActivity {
         profile = findViewById(R.id.profile);
         home1 = findViewById(R.id.home1);
 
-
         travel_button.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
             startActivity(intent);
         });
 
         sop_button.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+            Intent intent = new Intent(HomeActivity.this, UserLoginActivity.class);
             startActivity(intent);
         });
 

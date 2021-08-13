@@ -16,6 +16,8 @@
         <activity android:name=".VaccineRegistration" />
         <activity android:name=".ThankYou" />
         <activity android:name=".TravelActivity" />
+        <activity android:name=".UserLoginActivity"/>
+        <activity android:name=".UserRegistrationActivity"/>
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

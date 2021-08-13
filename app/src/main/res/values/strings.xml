@@ -12,11 +12,14 @@
 
     <string name="mahamaju">Check in to MahaMaju Kampar
                             \nDate: 20/6/2021       Time: 10:00 PM</string>
-    <string name="newUsername">Enter New Username</string>
-    <string name="ic">"Enter IC / Passport No "</string>
-    <string name="ic_2">Enter IC / Passport No</string>
+    <string name="ic">Enter IC / Passport No</string>
     <string name="addressline1">Enter Addressline 1</string>
     <string name="addressline2">Enter Addressline 2</string>
     <string name="state">Enter State</string>
+    <string name="postal_code">Enter Postal Code</string>
+    <string name="phone_no">Enter Phone No.</string>
+    <string name="email">Enter Email</string>
+    <string name="username">Enter Full Name</string>
+    <string name="userpassword">Enter Password</string>
 
 </resources>
