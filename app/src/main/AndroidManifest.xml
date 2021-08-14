@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySelamat">
+        <activity android:name=".HealthStatusQuestionActivity"></activity>
+        <activity android:name=".HealthStatusActivity" />
         <activity android:name=".FacilityActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity" />
@@ -16,15 +18,19 @@
         <activity android:name=".VaccineRegistration" />
         <activity android:name=".ThankYou" />
         <activity android:name=".TravelActivity" />
-        <activity android:name=".UserLoginActivity"/>
-        <activity android:name=".UserRegistrationActivity"/>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".HomeActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

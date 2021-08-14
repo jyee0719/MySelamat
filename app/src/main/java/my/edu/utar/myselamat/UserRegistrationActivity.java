@@ -88,7 +88,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
             return;
         }
 
-        if(ic.length() < 8 || ic.length() > 9){
+        if(ic.length() != 8 && ic.length() != 12){
             edt_ic.setError("IC OR Passport number should be 8 or 9 characters!");
             edt_ic.requestFocus();
             return;
@@ -153,6 +153,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                        //boolean isNewUser = task.getResult().getAdditionalUserInfo().isNewUser();
                         if(task.isSuccessful()){
                             UserActivity user = new UserActivity(username, ic, addressLine1, addressLine2, postalCode, phoneNo, email, state);
 
@@ -164,7 +165,6 @@ public class UserRegistrationActivity extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         Toast.makeText(UserRegistrationActivity.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
-
                                         // Redirect to login layout!
                                     }else{
                                         Toast.makeText(UserRegistrationActivity.this,"Failed to register! Try again!", Toast.LENGTH_LONG).show();
@@ -172,13 +172,11 @@ public class UserRegistrationActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-
                         }else{
                             Toast.makeText(UserRegistrationActivity.this,"Failed to register! Try again!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
-
     }
 }

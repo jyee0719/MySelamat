@@ -88,7 +88,9 @@ public class UserLoginActivity extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     //redirect to user profile
-                    Intent intent = new Intent(UserLoginActivity.this, ProfileActivity.class);
+//                    Intent intent = new Intent(UserLoginActivity.this, ProfileActivity.class);
+//                    startActivity(intent);
+                    Intent intent = new Intent(UserLoginActivity.this, HomeActivity.class);
                     startActivity(intent);
 
                 }else{

@@ -18,6 +18,4 @@ public class UserActivity {
         this.email = email;
         this.state = state;
     }
-
-
 }

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HealthStatusQuestionActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4EFEF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#ACB4E3"
+                android:baselineAligned="false"
+                android:padding="5dp"
+                android:text="Questions"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:text="1.  Are you exhibiting 2 or more symptoms as listed below? / Adakah anda mengalami 2 atau lebih gejala berikut?" />
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:text="• Body ache / Sakit badan" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Chill / Kesejukan" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Diarrhea / Cirit birit" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Fatigue / Keletihan" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Fever / Demam" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Heahache / Sakit kepala" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Nausea or vomiting / Loya atau muntah" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Runny nose or nasal congestion / Selesema atau hidung sumbat" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Shivering (rigor) / Mengigil" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Sore throat / Sakit tekak" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb1_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb2_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:text="2.  Besides the above, are you exhibiting any of the symptoms listed below? / Selain yang diatas, adakah anda mengalami gejala seperti yang berikut?" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:text="• Cough / Batuk" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Difficulty breathing / Sesak Nafas" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Loss of smell / Hilang deria bau" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="35dp"
+                android:text="• Loss of taste / Hilang deria rasa" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb3_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb4_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:text="3.  Have you attended any event / areas associated with know COVID-19 cluster? / Adakah anda mengunjungi lokasi berkaitan kluster COVID-19?" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb5_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb6_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:text="4.  Have you travelled to any country outside Malaysia within 14 days before onset of symptoms? / Adakah anda berkunjung ke luar negara dalam tempah 14 hari yang lepas?" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb7_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb8_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:text="5.  Have yoy had close contact to confirmed or suspected case of COVID-19 within 14 days before onset of illness? / Adalah anda berhubung rapat dengan seseorang yang positif COVID-19 atau suspek dalam tempoh 14 hari yang lepas?" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb9_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb10_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:text="6.  Are you a MOH COVID-19 volunteer in the last 14 days? / Adakah anda seorang sukarelawan Kementerian Kesihatan Malaysia sejak 14 hari lalu?" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:background="#FFFFFF"
+                android:elevation="5dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rGroup6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rb11_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No / Tidak" />
+
+                    <RadioButton
+                        android:id="@+id/rb12_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes / Ya" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Submit" />
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Cancel" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
