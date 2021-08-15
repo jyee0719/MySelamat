@@ -231,20 +231,3 @@ public class UserRegistrationActivity extends AppCompatActivity {
     }
 }
 
-//                            UserActivity user = new UserActivity(username, ic, addressLine1, addressLine2, postalCode, phoneNo, email, state);
-//
-//                                FirebaseDatabase.getInstance().getReference("Users")
-//                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull @NotNull Task<Void> task) {
-//                                        if(task.isSuccessful()){
-//                                            Toast.makeText(UserRegistrationActivity.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
-//                                            progressBar.setVisibility(View.GONE);
-//                                            // Redirect to login layout!
-//                                        }else{
-//                                            Toast.makeText(UserRegistrationActivity.this,"Failed to register! Try again!", Toast.LENGTH_LONG).show();
-//                                            progressBar.setVisibility(View.GONE);
-//                                        }
-//                                    }
-//                                });

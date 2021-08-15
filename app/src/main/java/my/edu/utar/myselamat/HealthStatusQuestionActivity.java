@@ -100,6 +100,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
 
                 displayResult(score);
 
+                //
                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 int wrapper[] = {score};
                 if(!uid.isEmpty()){
