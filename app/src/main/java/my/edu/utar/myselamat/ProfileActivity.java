@@ -36,13 +36,6 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         logout = (Button)findViewById(R.id.btn_logout);
 
-
-
-//        logout.setOnClickListener(v -> {
-//            FirebaseAuth.getInstance().signOut();
-//            startActivity(new Intent(ProfileActivity.this, UserLoginActivity.class));
-//        });
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -50,8 +43,11 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView nameTextView = (TextView) findViewById(R.id.tv_name);
         final TextView idTextView = (TextView) findViewById(R.id.tv_id);
         final TextView icTextView = (TextView) findViewById(R.id.tv_ic);
+        final TextView addressLine1TextView = (TextView) findViewById(R.id.tv_addressline1);
+        final TextView addressLine2TextView = (TextView) findViewById(R.id.tv_addressline2);
         final TextView stateTextView = (TextView) findViewById(R.id.tv_state);
-        //final TextView healthStatusTextView = (TextView) findViewById(R.id.tv_healthStatus);
+        final TextView postalCodeTextView = (TextView) findViewById(R.id.tv_postalCode);
+        final TextView healthStatusTextView = (TextView) findViewById(R.id.tv_healthStatus);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -60,17 +56,23 @@ public class ProfileActivity extends AppCompatActivity {
                 UserActivity userProfile = snapshot.getValue(UserActivity.class);
 
                 if(userProfile != null){
-                    String username = userProfile.username;
-                    String id = userProfile.phoneNo;
-                    String ic = userProfile.ic;
-                    String state = userProfile.state;
-                    // String healthStatus = userProfile.
+                    String username = userProfile.getUsername();
+                    String id = userProfile.getPhoneNo();
+                    String ic = userProfile.getIc();
+                    String addressLine1 = userProfile.getAddressLine1();
+                    String addressLine2 = userProfile.getAddressLine2();
+                    String state = userProfile.getState();
+                    String postalCode = userProfile.getPostalCode();
+                    String healthStatus = userProfile.getHealthStatus();
 
                     nameTextView.setText(username);
                     idTextView.setText(id);
                     icTextView.setText(ic);
+                    addressLine1TextView.setText(addressLine1);
+                    addressLine2TextView.setText(addressLine2);
                     stateTextView.setText(state);
-                    // healthStatusTextView.setText(healthStatus);
+                    postalCodeTextView.setText(postalCode);
+                    healthStatusTextView.setText(healthStatus);
                 }
             }
 

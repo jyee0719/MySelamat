@@ -99,6 +99,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="147dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Address Line 1:"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_addressline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:layout_weight="1"
+            android:textAlignment="gravity"
+            android:gravity="end"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tv40"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Address Line 2:"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_addressline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:layout_weight="1"
+            android:textAlignment="gravity"
+            android:gravity="end"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
@@ -117,6 +169,32 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginHorizontal="3dp"
+            android:textAlignment="gravity"
+            android:gravity="end"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tv43"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Postal Code:"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_postalCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="3dp"
+            android:layout_weight="1"
             android:textAlignment="gravity"
             android:gravity="end"
             android:textSize="16dp" />

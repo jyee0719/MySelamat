@@ -72,19 +72,27 @@
 
     <Button
         android:id="@+id/btn_signIn"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="3dp"
         android:text="sign in" />
 
     <Button
         android:id="@+id/btn_signUp"
-        android:layout_width="140dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="3dp"
         android:text="Sign Up" />
+
+    <Button
+        android:id="@+id/btn_forgot_password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Forgot Password" />
 
     <ProgressBar
         android:id="@+id/progressBar_login"

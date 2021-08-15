@@ -16,14 +16,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.jetbrains.annotations.NotNull;
 
 public class UserLoginActivity extends AppCompatActivity {
 
-    private Button btn_register;
+    private Button btn_register, btn_signIn, btn_forgot_pwd;
     private EditText edt_email, edt_password;
-    private Button btn_signIn;
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar_login;
@@ -39,16 +39,20 @@ public class UserLoginActivity extends AppCompatActivity {
         edt_email = (EditText)findViewById(R.id.et_login_email);
         edt_password = (EditText)findViewById(R.id.et_login_password);
         progressBar_login = (ProgressBar)findViewById(R.id.progressBar_login);
+        btn_forgot_pwd = (Button)findViewById(R.id.btn_forgot_password);
 
         mAuth = FirebaseAuth.getInstance();
 
         btn_register.setOnClickListener(v -> {
-            Intent intent = new Intent(this,UserRegistrationActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(UserLoginActivity.this,UserRegistrationActivity.class));
         });
 
         btn_signIn.setOnClickListener(v -> {
             UserLoginActivity();
+        });
+
+        btn_forgot_pwd.setOnClickListener(v ->{
+            startActivity(new Intent(UserLoginActivity.this,ForgotPasswordActivity.class));
         });
     }
 
@@ -57,7 +61,7 @@ public class UserLoginActivity extends AppCompatActivity {
         String password = edt_password.getText().toString().trim();
 
         if(email.isEmpty()){
-            edt_email.setError("Full name is required!");
+            edt_email.setError("Email is required!");
             edt_email.requestFocus();
             return;
         }
@@ -80,21 +84,17 @@ public class UserLoginActivity extends AppCompatActivity {
             return;
         }
 
-        progressBar_login.setVisibility(View.GONE);
+        progressBar_login.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
-                    //redirect to user profile
-//                    Intent intent = new Intent(UserLoginActivity.this, ProfileActivity.class);
-//                    startActivity(intent);
                     Intent intent = new Intent(UserLoginActivity.this, HomeActivity.class);
                     startActivity(intent);
-
                 }else{
-                    Toast.makeText(UserLoginActivity.this, "Failed to login? Please check your credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserLoginActivity.this, "Failed to login! Please key in your details again!", Toast.LENGTH_LONG).show();
                 }
             }
         });

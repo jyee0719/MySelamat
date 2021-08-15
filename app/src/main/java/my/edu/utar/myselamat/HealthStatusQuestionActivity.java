@@ -1,19 +1,31 @@
 package my.edu.utar.myselamat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 public class HealthStatusQuestionActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private Button btn_submit;
     private Button btn_cancel;
 
@@ -87,6 +99,33 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
                 }
 
                 displayResult(score);
+
+                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                int wrapper[] = {score};
+                if(!uid.isEmpty()){
+                    Log.i("User Id: ", uid);
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+
+                    ValueEventListener eventListener = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                            UserActivity ua = snapshot.getValue(UserActivity.class);
+                            ua.setHealthStatus((wrapper[0] == 6) ? "Low Risk" : "High Risk");
+                            databaseReference.child(uid).updateChildren(ua.toMap());
+                            Log.i("Database: ", "Update is Successful");
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                        }
+                    };
+
+                    databaseReference.child(uid).addValueEventListener(eventListener);
+
+                }else{
+                    Log.i("Error: ", "User Id is Null");
+                }
             }
         });
 
@@ -100,6 +139,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
 
     private void displayResult(int score){
         String message = (score == 6) ? "Low Risk Status" : "High Risk Status";
+
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 

@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         sop_button.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+            Intent intent = new Intent(HomeActivity.this, sopActivity.class);
             startActivity(intent);
         });
 

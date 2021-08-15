@@ -22,4 +22,5 @@
     <string name="username">Enter Full Name</string>
     <string name="userpassword">Enter Password</string>
     <string name="HealthStatus">Health Status</string>
+    <string name="sop">SOP</string>
 </resources>
