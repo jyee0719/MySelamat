@@ -94,7 +94,7 @@ public class UserLoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(UserLoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(UserLoginActivity.this, "Failed to login! Please key in your details again!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserLoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });

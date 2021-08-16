@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/userpassword"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="15dp" />
     </LinearLayout>
 

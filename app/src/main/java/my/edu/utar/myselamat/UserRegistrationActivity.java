@@ -100,8 +100,6 @@ public class UserRegistrationActivity extends AppCompatActivity {
             Log.i("Check Phone Number", str);
             if (!emailList.isEmpty() && !phoneNoList.isEmpty()) {
                 UserRegistrationActivity();
-            } else {
-                Toast.makeText(UserRegistrationActivity.this, "Havent read data from firebase", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -217,10 +215,10 @@ public class UserRegistrationActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(UserRegistrationActivity.this, "User has been registered successfully", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(UserRegistrationActivity.this, UserLoginActivity.class));
                                         progressBar.setVisibility(View.GONE);
                                     } else {
-                                        Toast.makeText(UserRegistrationActivity.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserRegistrationActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
