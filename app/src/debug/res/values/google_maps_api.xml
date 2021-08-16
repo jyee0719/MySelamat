@@ -4,12 +4,12 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=B2:A5:A9:C5:97:2E:E8:85:15:49:27:94:3B:0E:F9:9E:10:32:7A:69%3Bcom.example.locatehealth
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=B2:A5:A9:C5:97:2E:E8:85:15:49:27:94:3B:0E:F9:9E:10:32:7A:69%3Bmy.edu.utar.myselamat
 
     You can also add your credentials to an existing key, using these values:
 
     Package name:
-    com.example.myselamat
+    my.edu.utar.myselamat
 
     SHA-1 certificate fingerprint:
     B2:A5:A9:C5:97:2E:E8:85:15:49:27:94:3B:0E:F9:9E:10:32:7A:69
