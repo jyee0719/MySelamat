@@ -40,7 +40,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         // Disable btn_submit at start
         btn_submit.setEnabled(false);
 
-        // Create ArrayList
+        // Create ArrayList for all radio group
         ArrayList<RadioGroup> radioGroupList = new ArrayList<RadioGroup>();
 
         RadioGroup rg1 = (RadioGroup) findViewById(R.id.rGroup1);
@@ -110,8 +110,10 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
                     ValueEventListener eventListener = new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                            // Get UserActivity object and use the value for updating
                             UserActivity ua = snapshot.getValue(UserActivity.class);
                             ua.setHealthStatus((wrapper[0] == 6) ? "Low Risk" : "High Risk");
+                            // When calling updateChildren(), it will update the child values by specifying a path for the key.
                             databaseReference.child(uid).updateChildren(ua.toMap());
                             Log.i("Database: ", "Update is Successful");
                         }

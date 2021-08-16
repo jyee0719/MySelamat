@@ -37,6 +37,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        // Button to reset password
         btn_resetPwd.setOnClickListener(v -> {
             resetPassword();
         });
@@ -45,19 +46,24 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private void resetPassword(){
         String email = emailForResetPwd.getText().toString().trim();
 
-
+        // If email is empty, then it will pop out "full name is required".
         if(email.isEmpty()){
             emailForResetPwd.setError("Full name is required!");
             emailForResetPwd.requestFocus();
             return;
         }
 
+        // Validate the email pattern
+        // If the email pattern is not correct, then it will pop out "Please provide valid email".
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailForResetPwd.setError("Please provide valid email!");
             emailForResetPwd.requestFocus();
             return;
         }
 
+        // If the process of resetting password is successful, system will send them a link via email.
+        // Then, user will need to enter that link and it will appear a pop up window for resetting the new password.
+        // If the process of resetting password is unsuccessful, user is needed to re-enter their email again.
         progressBarForResetPwd.setVisibility(View.GONE);
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
