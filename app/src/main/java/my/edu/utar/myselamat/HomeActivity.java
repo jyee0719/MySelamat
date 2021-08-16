@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         locate_health_button.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+            Intent intent = new Intent(HomeActivity.this, FacilityActivity.class);
             startActivity(intent);
         });
 

@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D9E8F6"
     tools:context=".ProfileActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#5CC2EF"
+        android:background="#6883BD"
         android:padding="10dp"
         android:text="User Profile"
         android:textAlignment="center"
@@ -234,6 +235,7 @@
         android:padding="8dp"
         android:layout_marginVertical="5dp"
         android:text="sign out"
+        android:backgroundTint="#6883BD"
         android:textSize="16dp" />
 
 </LinearLayout>

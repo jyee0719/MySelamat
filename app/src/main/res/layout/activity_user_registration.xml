@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D9E8F6"
     tools:context=".UserRegistrationActivity">
 
     <TextView
@@ -15,7 +16,7 @@
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:background="#5CC2EF"
+        android:background="#6883BD"
         android:text="Sign Up" />
 
     <ScrollView
@@ -195,6 +196,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:backgroundTint="#6883BD"
                 android:text="Submit" />
 
             <ProgressBar

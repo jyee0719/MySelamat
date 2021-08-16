@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D9E8F6"
     tools:context=".HealthStatusActivity">
 
     <ScrollView
@@ -21,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="#48DCF3"
+                android:background="#6883BD"
                 android:padding="3dp"
                 android:text="@string/HealthStatus"
                 android:textAlignment="center"
@@ -85,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="28dp"
+                android:backgroundTint="#6883BD"
                 android:text="Start" />
         </LinearLayout>
     </ScrollView>

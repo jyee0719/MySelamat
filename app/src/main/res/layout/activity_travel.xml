@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#03AEC8"
+        android:background="#6883BD"
         android:text="@string/TravelHistory"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"

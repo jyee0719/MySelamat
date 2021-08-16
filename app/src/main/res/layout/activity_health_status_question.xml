@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="#ACB4E3"
+                android:background="#6883BD"
                 android:baselineAligned="false"
                 android:padding="5dp"
                 android:text="Questions"
@@ -394,6 +394,7 @@
                     android:layout_marginRight="35dp"
                     android:layout_weight="1"
                     android:padding="5dp"
+                    android:backgroundTint="#6883BD"
                     android:text="Submit" />
 
                 <Button
@@ -404,6 +405,7 @@
                     android:layout_marginRight="35dp"
                     android:layout_weight="1"
                     android:padding="5dp"
+                    android:backgroundTint="#6883BD"
                     android:text="Cancel" />
             </LinearLayout>
 
