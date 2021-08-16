@@ -4,25 +4,69 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class VaccinationDetails extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    private EditText interest, disabled, allergic,allergies;
+    private DatabaseReference databaseReference;
+    private Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccination_details);
 
-        Spinner dropdown = findViewById(R.id.state);
-        String[] items = new String[]{"Kuala Lumpur", "Labuan", "Putrajaya", "Johor", "Kedah", "Kelantan", "Malacca", "Negeri Sembilan", "Pahang",
-                "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", "Selangor", "Terengganu"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
+        mAuth = FirebaseAuth.getInstance();
 
-        Button submit = (Button)findViewById(R.id.submit);
-        submit.setOnClickListener(v -> startActivity(new Intent(VaccinationDetails.this, ThankYou.class)));
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        interest = (EditText) findViewById(R.id.interest);
+        disabled = (EditText) findViewById(R.id.disabled);
+        allergic = (EditText) findViewById(R.id.allergic);
+        allergies = (EditText) findViewById(R.id.allergies);
+        submit = (Button) findViewById(R.id.submit);
+
+        submit.setOnClickListener(v -> VaccinationDetails());
+    }
+
+    private void VaccinationDetails(){
+        String interest1  = interest.getText().toString().trim();
+        String disabled1 = disabled.getText().toString().trim();
+        String allergic1 = allergic.getText().toString().trim();
+        String allergies1 = allergies.getText().toString().trim();
+
+        if (interest1.isEmpty()) {
+            interest.setError("Please fill in Yes or No");
+            interest.requestFocus();
+            return;
+        }
+
+        if (disabled1.isEmpty()) {
+            disabled.setError("Please fill in Yes or No");
+            disabled.requestFocus();
+            return;
+        }
+
+        if (allergic1.isEmpty()) {
+            allergic.setError("Please fill in Yes or No");
+            allergic.requestFocus();
+            return;
+        }
+
+        else
+        {
+            startActivity(new Intent(VaccinationDetails.this, ThankYou.class));
+        }
+
+        //mAuth.updateCurrentUser();
     }
 }
+

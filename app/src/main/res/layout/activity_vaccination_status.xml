@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".VaccineRegistration">
+    tools:context=".VaccinationStatus">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:background="#5CC2EF"
         android:padding="10dp"
-        android:text="Vaccine Registration"
+        android:text="Vaccination Status"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -26,7 +26,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showname"
+            android:id="@+id/getname"
             android:layout_width="147dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -34,7 +34,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/showname1"
+            android:id="@+id/getname1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
@@ -52,7 +52,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showic"
+            android:id="@+id/getic"
             android:layout_width="147dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,7 +60,7 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/showic1"
+            android:id="@+id/getic1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="3dp"
@@ -78,15 +78,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showadd1"
+            android:id="@+id/getstatus"
             android:layout_width="147dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Address Line 1:"
+            android:text="Status:"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/add1"
+            android:id="@+id/getstatus1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
@@ -104,15 +104,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showadd2"
+            android:id="@+id/getlocation"
             android:layout_width="147dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Address Line 2:"
+            android:text="Vaccination Location:"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/add2"
+            android:id="@+id/getlocation1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
@@ -130,15 +130,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showstate"
+            android:id="@+id/gettype"
             android:layout_width="147dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="State:"
+            android:text="Type of Vaccine:"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/showstate1"
+            android:id="@+id/gettype1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
@@ -156,15 +156,15 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/showpostal"
+            android:id="@+id/getdate"
             android:layout_width="147dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Postal Code:"
+            android:text="Date and Time:"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/showpostal1"
+            android:id="@+id/getdate1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
@@ -174,16 +174,29 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginVertical="5dp"
-        android:padding="8dp"
-        android:text="next"
-        android:textSize="16dp"
-        android:translationY="200dp" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="306dp"
+        android:layout_marginTop="55dp"
+        android:background="#FFFFFF"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <ImageView
+            android:id="@+id/home1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="55dp"
+            android:src="@drawable/ic_baseline_home_24" />
+    </LinearLayout>
 
 </LinearLayout>

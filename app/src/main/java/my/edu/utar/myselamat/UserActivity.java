@@ -14,7 +14,16 @@ public class UserActivity {
             phoneNo,
             email,
             state,
-            healthStatus;
+            healthStatus,
+            allergies,
+            vaccinationStatus,
+            location,
+            type,
+            date;
+
+    private boolean interest,
+            disabledStatus,
+            allergiesStatus;
 
     public UserActivity() {
         this("", "", "", "", "", "", "", "");
@@ -30,7 +39,16 @@ public class UserActivity {
         this.email = email;
         this.state = state;
         this.healthStatus = "Low Risk";
+        this.interest = interest;
+        this.disabledStatus = disabledStatus;
+        this.allergiesStatus = allergiesStatus;
+        this.allergies = allergies;
+        this.vaccinationStatus = "N/A";
+        this.location = "N/A";
+        this.type = "N/A";
+        this.date = "N/A";
     }
+
 
     public void setUsername(String username) {
         this.username = username;
@@ -64,9 +82,15 @@ public class UserActivity {
         this.state = state;
     }
 
-    public void setHealthStatus(String healthStatus) {
-        this.healthStatus = healthStatus;
-    }
+    public void setHealthStatus(String healthStatus) { this.healthStatus = healthStatus; }
+
+    public void setInterest(boolean interest) { this.interest = interest;}
+
+    public void setDisabledStatus(boolean disabledStatus) { this.disabledStatus = disabledStatus; }
+
+    public void setAllergiesStatus(boolean allergiesStatus) { this.allergiesStatus = allergiesStatus; }
+
+    public void setAllergies(String allergies) { this.allergies = allergies; }
 
     public String getUsername() {
         return username;
@@ -104,6 +128,14 @@ public class UserActivity {
         return healthStatus;
     }
 
+    public String getVaccinationStatus() { return vaccinationStatus; }
+
+    public String getLocation() { return location; }
+
+    public String getType() { return  type; }
+
+    public String getDate() { return date;}
+
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("username", username);
@@ -115,6 +147,10 @@ public class UserActivity {
         result.put("email", email);
         result.put("state", state);
         result.put("healthStatus", healthStatus);
+        result.put("vaccinationStatus", vaccinationStatus);
+        result.put("location", location);
+        result.put("type", type);
+        result.put("date", date);
         return result;
     }
 
@@ -130,6 +166,10 @@ public class UserActivity {
                 ", email='" + email + '\'' +
                 ", state='" + state + '\'' +
                 ", healthStatus='" + healthStatus + '\'' +
+                ", vaccinationStatus='" + vaccinationStatus + '\'' +
+                ", location='" + location + '\'' +
+                ", type='" + type + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

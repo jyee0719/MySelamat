@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         check_vaccine_button.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+            Intent intent = new Intent(HomeActivity.this, VaccinationStatus.class);
             startActivity(intent);
         });
 

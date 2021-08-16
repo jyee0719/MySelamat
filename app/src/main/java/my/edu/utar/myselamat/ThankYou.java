@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class ThankYou extends AppCompatActivity {
 
@@ -14,7 +15,19 @@ public class ThankYou extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank_you);
 
-        Button home = (Button)findViewById(R.id.button7);
-        home.setOnClickListener(v -> startActivity(new Intent(ThankYou.this, HomeActivity.class)));
+        ImageView profile,home;
+
+        profile = findViewById(R.id.profile);
+        home = findViewById(R.id.home1);
+
+        profile.setOnClickListener(v -> {
+            Intent intent = new Intent(ThankYou.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        home.setOnClickListener(v -> {
+            Intent intent = new Intent(ThankYou.this, HomeActivity.class);
+            startActivity(intent);
+        });
     }
 }
