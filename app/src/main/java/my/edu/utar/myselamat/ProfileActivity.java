@@ -36,8 +36,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         logout = (Button)findViewById(R.id.btn_logout);
 
+        // Call firebase off and then get our instance and get current user.
         user = FirebaseAuth.getInstance().getCurrentUser();
+        // We need firebase database and then we need to get instance and then get reference and we are referencing users collection.
         reference = FirebaseDatabase.getInstance().getReference("Users");
+        // Get the unique ID of the logged in user
         userID = user.getUid();
 
         final TextView nameTextView = (TextView) findViewById(R.id.tv_name);
@@ -49,12 +52,15 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView postalCodeTextView = (TextView) findViewById(R.id.tv_postalCode);
         final TextView healthStatusTextView = (TextView) findViewById(R.id.tv_healthStatus);
 
+        // Get realtime database for that user
+        // So, we can get the reference and specify a child which is userID, then add listener for single value event and implement the inner class value event listener
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 // create user object and call it as user profile
                 UserActivity userProfile = snapshot.getValue(UserActivity.class);
 
+                // Check the user profile is existed
                 if(userProfile != null){
                     String username = userProfile.getUsername();
                     String id = userProfile.getPhoneNo();
@@ -65,6 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
                     String postalCode = userProfile.getPostalCode();
                     String healthStatus = userProfile.getHealthStatus();
 
+                    // Once we get the value, we need to set it to the layout.
                     nameTextView.setText(username);
                     idTextView.setText(id);
                     icTextView.setText(ic);
