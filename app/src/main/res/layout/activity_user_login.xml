@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D9E8F6"
     tools:context=".UserLoginActivity">
 
     <TextView
@@ -16,8 +17,8 @@
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:background="#6BC2E8"
-        android:text="Login" />
+        android:background="#6883BD"
+        android:text="LOGIN" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,7 +26,7 @@
         android:layout_height="127dp"
         android:layout_gravity="center"
         android:layout_marginVertical="35dp"
-        app:srcCompat="@drawable/login_logo" />
+        app:srcCompat="@drawable/logo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,6 +78,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="3dp"
+        android:backgroundTint="#6883BD"
         android:text="sign in" />
 
     <Button
@@ -85,13 +87,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="3dp"
-        android:text="Sign Up" />
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/black"
+        android:text="Sign up now" />
 
     <Button
         android:id="@+id/btn_forgot_password"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/transparent"
         android:text="Forgot Password" />
 
     <ProgressBar

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D9E8F6"
     tools:context=".sopActivity">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#138E9E"
+        android:background="#6883BD"
         android:padding="3dp"
         android:text="@string/sop"
         android:textAlignment="center"
