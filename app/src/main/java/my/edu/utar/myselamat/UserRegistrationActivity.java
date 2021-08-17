@@ -128,7 +128,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (ic.length() != 8 && ic.length() != 12) {
-            edt_ic.setError("IC OR Passport number should be 8 or 9 characters!");
+            edt_ic.setError("IC should be 12-digits and passport number should be 8-digits!");
             edt_ic.requestFocus();
             return;
         }
@@ -146,7 +146,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (postalCode.length() != 5) {
-            edt_postalCode.setError("Postal code should be 5 digits!");
+            edt_postalCode.setError("Postal code should be 5-digits!");
             edt_postalCode.requestFocus();
             return;
         }
@@ -158,13 +158,13 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (phoneNo.length() < 10 || phoneNo.length() > 11) {
-            edt_phoneNo.setError("Phone number should be 10 or 11 digits!");
+            edt_phoneNo.setError("Phone number should be 10-digits or 11-digits!");
             edt_phoneNo.requestFocus();
             return;
         }
 
         if (phoneNoList.contains(phoneNo)) {
-            edt_phoneNo.setError("Phone Number already existed!");
+            edt_phoneNo.setError("Phone Number already exist!");
             edt_phoneNo.requestFocus();
             return;
         }
@@ -176,7 +176,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (emailList.contains(email)) {
-            edt_email.setError("Email already existed!");
+            edt_email.setError("Email already exist!");
             edt_email.requestFocus();
             return;
         }
