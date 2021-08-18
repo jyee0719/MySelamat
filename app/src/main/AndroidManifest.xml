@@ -28,7 +28,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/map_key" />
 
         <activity
             android:name=".LocateActivity"
@@ -44,6 +44,7 @@
         <activity android:name=".VaccinationDetails" />
         <activity android:name=".VaccineRegistration" />
         <activity android:name=".ThankYou" />
+        <activity android:name=".Hotspot" />
         <activity android:name=".LocationHistoryActivity" />
         <activity android:name=".LocationCheckinActivity"/>
         <activity android:name=".UserLoginActivity">
