@@ -129,13 +129,13 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
                 }else{
                     Log.i("Error: ", "User Id is Null");
                 }
+                startActivity(new Intent(HealthStatusQuestionActivity.this, HomeActivity.class));
             }
         });
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HealthStatusQuestionActivity.this, HomeActivity.class));
             }
         });
     }
@@ -143,7 +143,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
     private void displayResult(int score){
         String message = (score == 6) ? "Low Risk Status" : "High Risk Status";
 
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Please go to user profile to check the updated health status!!", Toast.LENGTH_LONG).show();
     }
 
 }
