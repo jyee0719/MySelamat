@@ -2,6 +2,7 @@ package my.edu.utar.myselamat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -98,7 +99,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
                                 String time = selecthour + ":" + selectminute;
 
                                 //Initialize 24 hours time format
-                                SimpleDateFormat f24hour = new SimpleDateFormat("HH:mm");
+                                @SuppressLint("SimpleDateFormat") SimpleDateFormat f24hour = new SimpleDateFormat("HH:mm");
 
                                 try {
                                     Date date = f24hour.parse(time);
@@ -162,10 +163,9 @@ public class LocationCheckinActivity extends AppCompatActivity {
             locationET.requestFocus();
             Toast.makeText(this, "Incomplete Details", Toast.LENGTH_SHORT).show();
         } else {
-            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             String key = reference.push().getKey();
             locationCheckin = new LocationCheckin(checkinlocation, checkindate, checkintime);
-            reference.child(uid).child("Location").child(key).setValue(locationCheckin);
+            reference.child(userID).child("Location").child(key).setValue(locationCheckin);
 
             Toast.makeText(LocationCheckinActivity.this, "Check In Successfully", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(LocationCheckinActivity.this, HomeActivity.class);
