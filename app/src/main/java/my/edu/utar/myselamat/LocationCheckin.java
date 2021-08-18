@@ -1,38 +1,38 @@
 package my.edu.utar.myselamat;
 
 public class LocationCheckin {
-    public String checklocation, checkdate, checktime;
+    public String checkinlocation, checkindate, checkintime;
 
     public LocationCheckin() {
     }
 
-    public LocationCheckin(String checklocation, String checkdate, String checktime) {
-        this.checklocation = checklocation;
-        this.checkdate = checkdate;
-        this.checktime = checktime;
+    public LocationCheckin(String checkinlocation, String checkindate, String checkintime) {
+        this.checkinlocation = checkinlocation;
+        this.checkindate = checkindate;
+        this.checkintime = checkintime;
     }
 
-    public String getChecklocation() {
-        return checklocation;
+    public String getCheckinlocation() {
+        return checkinlocation;
     }
 
-    public void setChecklocation(String checklocation) {
-        this.checklocation = checklocation;
+    public void setCheckinlocation(String checkinlocation) {
+        this.checkinlocation = checkinlocation;
     }
 
-    public String getCheckdate() {
-        return checkdate;
+    public String getCheckindate() {
+        return checkindate;
     }
 
-    public void setCheckdate(String checkdate) {
-        this.checkdate = checkdate;
+    public void setCheckindate(String checkindate) {
+        this.checkindate = checkindate;
     }
 
-    public String getChecktime() {
-        return checktime;
+    public String getCheckintime() {
+        return checkintime;
     }
 
-    public void setChecktime(String checktime) {
-        this.checktime = checktime;
+    public void setCheckintime(String checkintime) {
+        this.checkintime = checkintime;
     }
 }

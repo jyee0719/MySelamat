@@ -34,6 +34,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
+    private LocationCheckin locationCheckin;
 
     EditText locationET;
     Button dateET;
@@ -64,7 +65,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month +1;
+                month = month + 1;
                 String date = makeDateString(day, month, year);
                 dateET.setText(date);
             }
@@ -111,11 +112,11 @@ public class LocationCheckinActivity extends AppCompatActivity {
                                 }
 
                             }
-                        },12,0,false);
+                        }, 12, 0, false);
                 //Set Transparent background
                 timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 //Displayed previous selected time
-                timePickerDialog.updateTime(selecthour,selectminute);
+                timePickerDialog.updateTime(selecthour, selectminute);
                 //show dialog
                 timePickerDialog.show();
             }
@@ -156,22 +157,19 @@ public class LocationCheckinActivity extends AppCompatActivity {
         checkindate = dateET.getText().toString().trim();
         checkintime = timeET.getText().toString().trim();
 
-        if(checkinlocation.isEmpty()) {
+        if (checkinlocation.isEmpty()) {
             locationET.setError("Location is required.");
             locationET.requestFocus();
             Toast.makeText(this, "Incomplete Details", Toast.LENGTH_SHORT).show();
-        }
-        if(checkintime.isEmpty()) {
-            timeET.setError("Time is required.");
-            timeET.requestFocus();
-            Toast.makeText(this, "Incomplete Details", Toast.LENGTH_SHORT).show();
-        }
-        String key = reference.push().getKey();
-        LocationCheckin locationCheckin = new LocationCheckin(checkinlocation, checkindate, checkintime);
-        reference.child(key).setValue(locationCheckin);
+        } else {
+            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            String key = reference.push().getKey();
+            locationCheckin = new LocationCheckin(checkinlocation, checkindate, checkintime);
+            reference.child(uid).child("Location").child(key).setValue(locationCheckin);
 
-        Toast.makeText(LocationCheckinActivity.this, "Check In Successfully", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(LocationCheckinActivity.this, HomeActivity.class);
-        startActivity(i);
+            Toast.makeText(LocationCheckinActivity.this, "Check In Successfully", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(LocationCheckinActivity.this, HomeActivity.class);
+            startActivity(i);
+        }
     }
 }
