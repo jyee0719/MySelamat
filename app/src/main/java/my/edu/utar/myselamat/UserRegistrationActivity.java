@@ -215,7 +215,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        startActivity(new Intent(UserRegistrationActivity.this, UserLoginActivity.class));
+                                        startActivity(new Intent(UserRegistrationActivity.this, HomeActivity.class));
                                         progressBar.setVisibility(View.GONE);
                                     } else {
                                         Toast.makeText(UserRegistrationActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
