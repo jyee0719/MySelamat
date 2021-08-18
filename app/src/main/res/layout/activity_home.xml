@@ -69,14 +69,14 @@
         app:backgroundTint="#6883BD" />
 
     <Button
-        android:id="@+id/travel_button"
+        android:id="@+id/location_checkin_button"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="40dp"
         android:textSize="16dp"
-        android:text="Travel History"
+        android:text="Location Check In"
         app:backgroundTint="#A0B3DD" />
 
     <Button
@@ -103,15 +103,22 @@
             android:id="@+id/profile"
             android:layout_width="80dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_baseline_person_24" />
 
         <ImageView
             android:id="@+id/home1"
             android:layout_width="80dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="55dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_history_24" />
     </LinearLayout>
 
 </LinearLayout>

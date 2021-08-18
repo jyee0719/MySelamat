@@ -11,9 +11,9 @@
         tools:layout="@layout/activity_profile" />
     <fragment
         android:id="@+id/travelActivity"
-        android:name="my.edu.utar.myselamat.TravelActivity"
+        android:name="my.edu.utar.myselamat.LocationHistoryActivity"
         android:label="activity_travel"
-        tools:layout="@layout/activity_travel" />
+        tools:layout="@layout/activity_location_history" />
     <activity
         android:id="@+id/mainActivity"
         android:name="my.edu.utar.myselamat.MainActivity"
