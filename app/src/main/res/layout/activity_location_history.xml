@@ -21,7 +21,7 @@
         android:padding="5dp"/>
 
     <SearchView
-        android:id="@+id/search"
+        android:id="@+id/historysearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/textview_border"
@@ -33,8 +33,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/nolocationhistory"

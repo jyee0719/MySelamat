@@ -55,9 +55,9 @@ public class LocationHistoryRecyclerAdapter extends RecyclerView.Adapter<Locatio
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        holder.location.setText("Check in to " + locationCheckin.getCheckinlocation());
+                        holder.location.setText(locationCheckin.getCheckinlocation());
                         holder.date.setText("Date: " + locationCheckin.getCheckindate());
-                        holder.time.setText("Time:" + locationCheckin.getCheckintime());
+                        holder.time.setText("Time: " + locationCheckin.getCheckintime());
                     }
                 });
             }
