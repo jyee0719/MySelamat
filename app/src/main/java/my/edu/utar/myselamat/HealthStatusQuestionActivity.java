@@ -148,8 +148,8 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         });
     }
 
-    // If the user gets the full score, the health status will be updated as low risk status.
-    // If the user cannot get the full score, the health status will be updated as high risk status.
+    // If the user gets the full score, the health status will be updated to low risk status.
+    // If the user cannot get the full score, the health status will be updated to high risk status.
     private void displayResult(int score){
         String message = (score == 6) ? "Low Risk Status" : "High Risk Status";
 
