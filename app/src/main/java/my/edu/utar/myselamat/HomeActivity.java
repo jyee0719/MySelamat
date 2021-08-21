@@ -7,14 +7,24 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
         Button location_checkin_button,sop_button,hotspot_button,health_status_button,register_vaccine_button,check_vaccine_button,locate_health_button;
         ImageView profile,history;
+
+        if(firebaseUser == null){
+            startActivity(new Intent(HomeActivity.this, UserLoginActivity.class));
+        }
 
         location_checkin_button = findViewById(R.id.location_checkin_button);
         sop_button = findViewById(R.id.sop_button);

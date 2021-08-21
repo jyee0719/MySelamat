@@ -50,14 +50,15 @@
         <activity android:name=".LocationHistoryActivity" />
         <activity android:name=".LocationCheckinActivity" />
         <activity android:name=".UserLoginActivity">
+        </activity>
+        <activity android:name=".UserRegistrationActivity" />
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserRegistrationActivity" />
-        <activity android:name=".HomeActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
