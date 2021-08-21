@@ -37,7 +37,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        // Button to reset password
         btn_resetPwd.setOnClickListener(v -> {
             resetPassword();
         });
@@ -46,7 +45,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private void resetPassword(){
         String email = emailForResetPwd.getText().toString().trim();
 
-        // If email is empty, then it will pop out "full name is required".
+        // Implement validation
+        // If the email is empty, the error message will be popped up.
         if(email.isEmpty()){
             emailForResetPwd.setError("Full name is required!");
             emailForResetPwd.requestFocus();
@@ -54,23 +54,22 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         }
 
         // Validate the email pattern
-        // If the email pattern is not correct, then it will pop out "Please provide valid email".
+        // If the entered email pattern is not correct, the error message will be popped up.
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailForResetPwd.setError("Please provide valid email!");
             emailForResetPwd.requestFocus();
             return;
         }
 
-        // If the process of resetting password is successful, system will send them a link via email.
-        // Then, user will need to enter that link and it will appear a pop up window for resetting the new password.
-        // If the process of resetting password is unsuccessful, user is needed to re-enter their email again.
+        // If the process of resetting password is successful, the reset link will be sent to the email.
+        // When user click that link, a popup window will be appeared for resetting the new password.
         progressBarForResetPwd.setVisibility(View.GONE);
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<Void> task) {
 
                 if(task.isSuccessful()){
-                    Toast.makeText(ForgotPasswordActivity.this, "Reset Link has been sent to your email.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Reset link has been sent to your email.", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ForgotPasswordActivity.this,"Error! Reset link is not sent. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
