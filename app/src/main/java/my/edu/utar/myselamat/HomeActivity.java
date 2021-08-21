@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         hotspot_button.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Hotspot.class);
+            Intent intent = new Intent(HomeActivity.this, Hotspot2.class);
             startActivity(intent);
         });
 
