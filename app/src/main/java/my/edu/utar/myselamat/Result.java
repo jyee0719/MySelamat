@@ -37,6 +37,7 @@ public class Result extends AppCompatActivity {
                 String location = String.valueOf(textView.getText());
                 Intent intent = new Intent(Result.this, Hotspot.class);
                 intent.putExtra("location",location);
+                textView.setText(null);
                 startActivity(intent);
             }
         });

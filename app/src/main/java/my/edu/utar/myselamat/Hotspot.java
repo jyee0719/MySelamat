@@ -82,6 +82,7 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
 
                 map.addMarker(new MarkerOptions().position(latLng)
                 .title(location));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
 
             }
 
@@ -92,11 +93,11 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
         });
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        if(map!=null){
-            map.clear();
-        }
-    }
+//    @Override
+//    protected void onResume(){
+//        super.onResume();
+//        if(map!=null){
+//            map.clear();
+//        }
+//    }
 }
