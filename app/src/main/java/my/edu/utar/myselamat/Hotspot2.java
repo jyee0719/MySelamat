@@ -49,6 +49,7 @@ public class Hotspot2 extends FragmentActivity implements OnMapReadyCallback {
         name = findViewById(R.id.name);
 
         button_track=findViewById(R.id.button2);
+        button_track.setEnabled(false);
         button_track.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +69,7 @@ public class Hotspot2 extends FragmentActivity implements OnMapReadyCallback {
                 List<Address> addressList = null;
 
                 if (location!=null || !location.equals("")){
+                    button_track.setEnabled(true);
                     Geocoder geocoder = new Geocoder(Hotspot2.this);
                     try {
                         addressList = geocoder.getFromLocationName(location,1);
@@ -81,7 +83,9 @@ public class Hotspot2 extends FragmentActivity implements OnMapReadyCallback {
                     LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
                     map.addMarker(new MarkerOptions().position(latLng).title(location));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
-                    name.setText(location);
+                    //name.setText(location);
+                    String str=latLng.toString();
+                    name.setText(str);
                 }
                 return false;
             }

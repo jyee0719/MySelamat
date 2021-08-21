@@ -1,61 +1,46 @@
 package my.edu.utar.myselamat;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 public class Result extends AppCompatActivity {
-    TextView address, cases, risk;
-    DatabaseReference databaseReference;
+    AutoCompleteTextView autoCompleteTextView;
+    TextView textView;
+    String[] Location ={"Kampar","Hospital Kampar","Sitiawan","Batu Pahat"};
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        address=findViewById(R.id.address);
-        cases=findViewById(R.id.cases);
-        risk=findViewById(R.id.risk);
+        //String[] Location = getResources().getStringArray(R.array.Location);
 
+        autoCompleteTextView = findViewById(R.id.autotv);
+        textView=findViewById(R.id.tv);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, Location);
 
-        cases.setText("ass");
-        //Intent intent=getIntent();
-        //String name=intent.getStringExtra("name");
+        autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setAdapter(adapter);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Hotspot2");
-        databaseReference.child("kampar").addValueEventListener(new ValueEventListener() {
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String addr = snapshot.child("addr").getValue().toString();
-                    //String lat = snapshot.child("lat").getValue().toString();
-                    //String longti = snapshot.child("long").getValue().toString();
-                    //String cases1 = snapshot.child("case").getValue().toString();
-                    //String risk1 = snapshot.child("risk").getValue().toString();
-
-
-                    address.setText(addr);
-                    //cases.setText(cases1);
-                    //risk.setText(risk1);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                textView.setText(adapter.getItem(position));
+                String location = String.valueOf(textView.getText());
+                Intent intent = new Intent(Result.this, Hotspot.class);
+                intent.putExtra("location",location);
+                startActivity(intent);
             }
         });
 
-
-
-
+        //String str = autotv.getText().toString();
     }
 }

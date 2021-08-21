@@ -26,7 +26,7 @@ public class TrackResult extends AppCompatActivity {
         c=findViewById(R.id.textView31);
 
         Intent intent=getIntent();
-        String name=intent.getStringExtra("name");
+        String name=intent.getStringExtra("location");
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Hotspot2");
         databaseReference.child(name).addValueEventListener(new ValueEventListener() {
@@ -50,6 +50,7 @@ public class TrackResult extends AppCompatActivity {
 
             }
         });
+
 
     }
 }

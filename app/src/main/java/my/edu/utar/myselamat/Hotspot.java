@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -15,6 +18,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,46 +34,31 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
     GoogleMap map;
     SupportMapFragment mapFragment;
     SearchView searchView;
+    DatabaseReference databaseReference;
+    Button button_track;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotspot);
 
-        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        searchView = findViewById(R.id.search_location);
+        Intent intent=getIntent();
+        String location = intent.getStringExtra("location");
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        button_track=findViewById(R.id.button2);
+        button_track.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                String location = searchView.getQuery().toString();
-                List<Address> addressList = null;
+            public void onClick(View v) {
+                //String name1 = location;
 
-                if (location!=null || !location.equals("")){
-                    Geocoder geocoder = new Geocoder(Hotspot.this);
-                    try {
-                        addressList = geocoder.getFromLocationName(location,1);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    //if(mm!=null)
-                    //    mm.remove();
-
-                    Address address = addressList.get(0);
-                    LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-                    map.addMarker(new MarkerOptions().position(latLng).title(location));
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
-
-                }
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+                Intent intent = new Intent(Hotspot.this, TrackResult.class);
+                intent.putExtra("location",location);
+                startActivity(intent);
             }
         });
 
+
+        mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -76,5 +69,34 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
         map.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        Intent intent=getIntent();
+        String location = intent.getStringExtra("location");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Hotspot2");
+        databaseReference.child(location).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                LatLng latLng = new LatLng(
+                        snapshot.child("lat").getValue(Long.class),
+                        snapshot.child("long").getValue(Long.class));
+
+                map.addMarker(new MarkerOptions().position(latLng)
+                .title(location));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(map!=null){
+            map.clear();
+        }
     }
 }
