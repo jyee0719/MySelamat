@@ -79,7 +79,7 @@ public class UserLoginActivity extends AppCompatActivity {
         }
 
         if(password.length() < 6 || password.length() > 8){
-            edt_password.setError("Password length should be 6 characters!");
+            edt_password.setError("Password length should be in the range of 6-8 characters!");
             edt_password.requestFocus();
             return;
         }
@@ -91,10 +91,11 @@ public class UserLoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
+                    Toast.makeText(UserLoginActivity.this,"Login successfully.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(UserLoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(UserLoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserLoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -68,7 +68,6 @@ public class UserRegistrationActivity extends AppCompatActivity {
             }
         };
 
-
         edt_username = (EditText) findViewById(R.id.et_newUserName);
         edt_ic = (EditText) findViewById(R.id.et_user_ic);
         edt_addressLine1 = (EditText) findViewById(R.id.et_user_addressline1);
@@ -122,7 +121,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (ic.isEmpty()) {
-            edt_ic.setError("IC OR Passport number is required");
+            edt_ic.setError("IC OR Passport number is required!");
             edt_ic.requestFocus();
             return;
         }
@@ -195,7 +194,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         if (password.length() < 6 || password.length() > 8) {
-            edt_password.setError("Password length should be 6 characters!");
+            edt_password.setError("Password length should be in the range of 6-8 characters!");
             edt_password.requestFocus();
             return;
         }
@@ -215,10 +214,11 @@ public class UserRegistrationActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        Toast.makeText(UserRegistrationActivity.this,"Account created.", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(UserRegistrationActivity.this, HomeActivity.class));
                                         progressBar.setVisibility(View.GONE);
                                     } else {
-                                        Toast.makeText(UserRegistrationActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserRegistrationActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }

@@ -70,9 +70,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onComplete(@NonNull @NotNull Task<Void> task) {
 
                 if(task.isSuccessful()){
-                    Toast.makeText(ForgotPasswordActivity.this, "Check your email to reset your password!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Reset Link has been sent to your email.", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(ForgotPasswordActivity.this,"Error! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPasswordActivity.this,"Error! Reset link is not sent. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
