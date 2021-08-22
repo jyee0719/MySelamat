@@ -33,8 +33,6 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
 
     GoogleMap map;
     SupportMapFragment mapFragment;
-    SearchView searchView;
-    DatabaseReference databaseReference;
     Button button_track;
 
     @Override

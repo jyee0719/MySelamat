@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="#D9E8F6"
     tools:context=".Result">
 
     <AutoCompleteTextView
@@ -14,6 +15,7 @@
         android:hint="Select Location From Here"
         android:dropDownAnchor="@id/tv"
         android:padding="12dp"
+        android:background="#6883BD"
         android:id="@+id/autotv"/>
 
     <TextView

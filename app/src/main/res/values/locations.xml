@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="locations">
+        <item>Sitiawan</item>
+        <item>Hospital Kampar</item>
+        <item>Ampang</item>
+        <item>Batu Pahat</item>
+        <item>Kampung Gajah</item>
+        <item>Taman Gurney Jaya</item>
+    </string-array>
+</resources>

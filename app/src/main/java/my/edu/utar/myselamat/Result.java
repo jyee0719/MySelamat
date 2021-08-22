@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class Result extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     TextView textView;
-    String[] Location ={"Kampar","Hospital Kampar","Sitiawan","Batu Pahat", "Kampung Gajah" , "Ampang"};
     ArrayAdapter<String> adapter;
 
     @Override
@@ -21,7 +20,7 @@ public class Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        //String[] Location = getResources().getStringArray(R.array.Location);
+        String[] Location = getResources().getStringArray(R.array.locations);
 
         autoCompleteTextView = findViewById(R.id.autotv);
         textView=findViewById(R.id.tv);

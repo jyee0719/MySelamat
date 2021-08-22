@@ -14,16 +14,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class TrackResult extends AppCompatActivity {
-    TextView a,b,c;
+    TextView addr,cases,risk;
     DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_result);
-        a=findViewById(R.id.textView29);
-        b=findViewById(R.id.textView30);
-        c=findViewById(R.id.textView31);
+        addr=findViewById(R.id.addr);
+        cases=findViewById(R.id.cases);
+        risk=findViewById(R.id.risk);
 
         Intent intent=getIntent();
         String name=intent.getStringExtra("location");
@@ -32,16 +32,14 @@ public class TrackResult extends AppCompatActivity {
         databaseReference.child(name).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String addr = snapshot.child("addr").getValue().toString();
-                //String lat = snapshot.child("lat").getValue().toString();
-                //String longti = snapshot.child("long").getValue().toString();
+                String addr1 = snapshot.child("addr").getValue().toString();
                 String cases1 = snapshot.child("case").getValue().toString();
                 String risk1 = snapshot.child("risk").getValue().toString();
 
 
-                a.setText(addr);
-                b.setText(cases1);
-                c.setText(risk1);
+                addr.setText(addr1);
+                cases.setText(cases1);
+                risk.setText(risk1);
 
             }
 
