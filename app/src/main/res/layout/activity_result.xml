@@ -9,6 +9,10 @@
     android:background="#D9E8F6"
     tools:context=".Result">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
     <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,6 +21,18 @@
         android:padding="12dp"
         android:background="#6883BD"
         android:id="@+id/autotv"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:id="@+id/clear"
+        android:background="#6883BD"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_baseline_close_24"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv"
@@ -27,5 +43,7 @@
         android:visibility="invisible"
         android:gravity="center"
         android:textStyle="bold" />
+
+
 
 </LinearLayout>

@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Result extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     TextView textView;
     ArrayAdapter<String> adapter;
+    ImageButton clearbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,15 @@ public class Result extends AppCompatActivity {
                 String location = String.valueOf(textView.getText());
                 Intent intent = new Intent(Result.this, Hotspot.class);
                 intent.putExtra("location",location);
-
-
-                //textView.setText(null);
                 startActivity(intent);
+            }
+        });
+
+        clearbutton=findViewById(R.id.clear);
+        clearbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autoCompleteTextView.setText(null);
             }
         });
 
