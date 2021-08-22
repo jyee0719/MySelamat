@@ -12,6 +12,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,10 +31,11 @@ public class LocationHistoryActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
 
-    SearchView searchView;
     RecyclerView historyRecyclerView;
     LocationHistoryRecyclerAdapter adapter;
     TextView nolocationhistory;
+    LinearLayoutManager linearLayoutManager;
+    LocationHistorySearchAdapter locationHistorySearchAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +44,14 @@ public class LocationHistoryActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
-        reference = FirebaseDatabase.getInstance().getReference().child(userID).child("Location");
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Location");
 
-
-        searchView = findViewById(R.id.search);
         nolocationhistory = findViewById(R.id.nolocationhistory);
         historyRecyclerView = findViewById(R.id.historyRecyclerView);
-        historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        historyRecyclerView.setLayoutManager(linearLayoutManager);
+
 
         final Handler handler = new Handler(getMainLooper());
         final ArrayList<LocationCheckin> locationCheckinlist = new ArrayList<>();
@@ -91,6 +94,40 @@ public class LocationHistoryActivity extends AppCompatActivity {
         Thread thread = new Thread(runnable);
         thread.start();
 
+        FirebaseRecyclerOptions<LocationCheckin> options = new FirebaseRecyclerOptions.Builder<LocationCheckin>()
+                .setQuery(FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Location"), LocationCheckin.class)
+                .build();
 
+        locationHistorySearchAdapter = new LocationHistorySearchAdapter(options);
+        historyRecyclerView.setAdapter(locationHistorySearchAdapter);
+
+        SearchView searchView = findViewById(R.id.historysearch);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                search(query);
+                Toast.makeText(LocationHistoryActivity.this, "Searching...", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                search(newText);
+                Toast.makeText(LocationHistoryActivity.this, "Searching...", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+    }
+
+    private void search(String s) {
+
+        FirebaseRecyclerOptions<LocationCheckin> options = new FirebaseRecyclerOptions.Builder<LocationCheckin>()
+                .setQuery(FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Location")
+                        .orderByChild("checkinlocation").startAt(s).endAt(s + "~"), LocationCheckin.class)
+                .build();
+
+        locationHistorySearchAdapter = new LocationHistorySearchAdapter(options);
+        locationHistorySearchAdapter.startListening();
+        historyRecyclerView.setAdapter(locationHistorySearchAdapter);
     }
 }

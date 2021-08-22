@@ -38,6 +38,7 @@
         <activity android:name=".sopActivity" />
         <activity android:name=".HealthStatusQuestionActivity" />
         <activity android:name=".HealthStatusActivity" />
+        <activity android:name=".FacilityActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".VaccinationDetails" />

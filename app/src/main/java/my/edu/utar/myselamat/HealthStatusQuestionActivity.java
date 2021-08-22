@@ -37,7 +37,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         btn_submit = (Button) findViewById(R.id.btn_submit);
         btn_cancel = (Button) findViewById(R.id.btn_cancel);
 
-        // Disable btn_submit at start
+        // Disable submit button at the beginning
         btn_submit.setEnabled(false);
 
         // Create ArrayList for all radio group
@@ -61,6 +61,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         RadioGroup rg6 = (RadioGroup) findViewById(R.id.rGroup6);
         radioGroupList.add(rg6);
 
+        // Check all the radio group have selected one of the button and the submit button will be enabled.
         boolean[] check_flag = {false, false, false, false, false, false};
 
         for(int rid = 0; rid < radioGroupList.size(); rid++){
@@ -70,15 +71,21 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
             radioGroupList.get(rid).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    // Set a flag is true for checking each radio group.
                     check_flag[ind] = true;
 
+                    // Set all flag will become true and the submit button will be enabled.
                     boolean all_flag = true;
 
+                    // The radio group is checked one by one
                     for(int i = 0;i < 6; i++) {
+                        // If one of the radio group is checked as no button selected, the flag will become false.
                         if (!check_flag[i])
+                            // If one of the flag become false, the submit button will still be disabled.
                             all_flag = false;
                     }
 
+                    // If all flag is true, the submit button will be enabled.
                     btn_submit.setEnabled(all_flag);
                 }
             });
@@ -92,15 +99,15 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
 
                 int[] add_id = { R.id.rb1_no, R.id.rb3_no, R.id.rb5_no, R.id.rb7_no, R.id.rb9_no, R.id.rb11_no};
 
+                // If the specified button is selected, the score will be kept on adding.
                 for(int id : add_id) {
                     RadioButton rb = (RadioButton) findViewById(id);
                     if(rb.isChecked()) score++;
-                    // score += (rb.isChecked()) ? 1 : 0;
                 }
 
                 displayResult(score);
 
-                //
+                // Get the uid of current user
                 String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 int wrapper[] = {score};
                 if(!uid.isEmpty()){
@@ -110,8 +117,9 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
                     ValueEventListener eventListener = new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                            // Get UserActivity object and use the value for updating
+                            // Get UserActivity object and get value for updating
                             UserActivity ua = snapshot.getValue(UserActivity.class);
+                            // Get the health status result for updating
                             ua.setHealthStatus((wrapper[0] == 6) ? "Low Risk" : "High Risk");
                             // When calling updateChildren(), it will update the child values by specifying a path for the key.
                             databaseReference.child(uid).updateChildren(ua.toMap());
@@ -140,10 +148,12 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         });
     }
 
+    // If the user gets the full score, the health status will be updated to low risk status.
+    // If the user cannot get the full score, the health status will be updated to high risk status.
     private void displayResult(int score){
         String message = (score == 6) ? "Low Risk Status" : "High Risk Status";
 
-        Toast.makeText(this, "Please go to user profile to check the updated health status!!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Please go to user profile to check the updated health status!!", Toast.LENGTH_SHORT).show();
     }
 
 }

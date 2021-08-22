@@ -16,6 +16,7 @@ public class sopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sop);
     }
 
+    // When an image view is clicked, the system will redirect to the specific url.
     public void openBrowser(View view){
         // Get url from tag
         String url = (String)view.getTag();
@@ -26,10 +27,10 @@ public class sopActivity extends AppCompatActivity {
 
         // Pass the url to intent data
         intent.setData(Uri.parse(url));
-
         startActivity(intent);
     }
 
+    // When an image view is clicked, no information is appeared.
     public void noInfoUpload(View view){
         Toast.makeText(this, "No any information uploaded in Fasa 3 and Fasa 4!!", Toast.LENGTH_LONG).show();
     }
