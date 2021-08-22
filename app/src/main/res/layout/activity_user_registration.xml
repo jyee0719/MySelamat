@@ -197,7 +197,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#6883BD"
-                android:text="Submit" />
+                android:text="Sign Up" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
