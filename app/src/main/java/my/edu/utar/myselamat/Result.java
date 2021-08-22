@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class Result extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     TextView textView;
-    String[] Location ={"Kampar","Hospital Kampar","Sitiawan","Batu Pahat"};
+    String[] Location ={"Kampar","Hospital Kampar","Sitiawan","Batu Pahat", "Kampung Gajah" , "Ampang"};
     ArrayAdapter<String> adapter;
 
     @Override
@@ -37,11 +37,12 @@ public class Result extends AppCompatActivity {
                 String location = String.valueOf(textView.getText());
                 Intent intent = new Intent(Result.this, Hotspot.class);
                 intent.putExtra("location",location);
-                textView.setText(null);
+
+
+                //textView.setText(null);
                 startActivity(intent);
             }
         });
 
-        //String str = autotv.getText().toString();
     }
 }

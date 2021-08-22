@@ -58,6 +58,7 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
+
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
@@ -72,25 +73,25 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
 
         Intent intent=getIntent();
         String location = intent.getStringExtra("location");
-        databaseReference = FirebaseDatabase.getInstance().getReference("Hotspot2");
-        databaseReference.child(location).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                LatLng latLng = new LatLng(
-                        snapshot.child("lat").getValue(Long.class),
-                        snapshot.child("long").getValue(Long.class));
 
-                map.addMarker(new MarkerOptions().position(latLng)
-                .title(location));
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+        List<Address> addressList = null;
 
+        if (location!=null || !location.equals("")){
+            button_track.setEnabled(true);
+            Geocoder geocoder = new Geocoder(Hotspot.this);
+            try {
+                addressList = geocoder.getFromLocationName(location,1);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            //if(mm!=null)
+            //    mm.remove();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+            Address address = addressList.get(0);
+            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+            map.addMarker(new MarkerOptions().position(latLng).title(location));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+        }
     }
 
 //    @Override
