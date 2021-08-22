@@ -8,20 +8,21 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Result extends AppCompatActivity {
     AutoCompleteTextView autoCompleteTextView;
     TextView textView;
-    String[] Location ={"Kampar","Hospital Kampar","Sitiawan","Batu Pahat"};
     ArrayAdapter<String> adapter;
+    ImageButton clearbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        //String[] Location = getResources().getStringArray(R.array.Location);
+        String[] Location = getResources().getStringArray(R.array.locations);
 
         autoCompleteTextView = findViewById(R.id.autotv);
         textView=findViewById(R.id.tv);
@@ -37,11 +38,17 @@ public class Result extends AppCompatActivity {
                 String location = String.valueOf(textView.getText());
                 Intent intent = new Intent(Result.this, Hotspot.class);
                 intent.putExtra("location",location);
-                textView.setText(null);
                 startActivity(intent);
             }
         });
 
-        //String str = autotv.getText().toString();
+        clearbutton=findViewById(R.id.clear);
+        clearbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autoCompleteTextView.setText(null);
+            }
+        });
+
     }
 }

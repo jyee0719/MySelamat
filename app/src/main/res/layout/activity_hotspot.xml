@@ -14,13 +14,15 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"/>
 
-
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignBottom="@id/map"
+        android:backgroundTint="#6883BD"
+        android:layout_centerHorizontal="true"
         android:text="Track" />
 
     <TextView
