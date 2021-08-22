@@ -53,6 +53,7 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
 
                     Address address = addressList.get(0);
                     LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                    map.clear();
                     map.addMarker(new MarkerOptions().position(latLng).title(location));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
 
