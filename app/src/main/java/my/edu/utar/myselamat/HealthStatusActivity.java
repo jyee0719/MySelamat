@@ -26,7 +26,7 @@ public class HealthStatusActivity extends AppCompatActivity {
         });
     }
 
-    // Will proceed to the page of health status question
+    // Proceed to the page of health status question
     public void HealthStatusQuestion(){
         Intent intent = new Intent(HealthStatusActivity.this, HealthStatusQuestionActivity.class);
         startActivity(intent);

@@ -24,4 +24,10 @@
     <string name="HealthStatus">Health Status</string>
     <string name="sop">SOP</string>
     <string name="title_activity_locate">Map</string>
+    <string name="enter_username">Enter Name</string>
+    <string name="enter_ic">Enter IC/Passport</string>
+    <string name="enter_addressLine1">Enter Address Line 1</string>
+    <string name="enter_addressLine2">Enter Address Line 2</string>
+    <string name="enter_state">Enter State</string>
+    <string name="enter_postalCode">Enter Postal Code</string>
 </resources>

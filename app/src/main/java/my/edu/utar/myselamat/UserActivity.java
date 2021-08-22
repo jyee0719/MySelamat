@@ -5,6 +5,7 @@ import android.widget.EditText;
 import java.util.HashMap;
 import java.util.Map;
 
+// UserActivity is to store the user details
 public class UserActivity {
     private String username,
             ic,
