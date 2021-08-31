@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySelamat">
-        <activity android:name=".Essentials"></activity>
+        <activity android:name=".VaccineList"></activity>
+        <activity android:name=".VaccineInfo" />
+        <activity android:name=".Essentials" />
         <activity
             android:name=".FacilityList"
             android:parentActivityName=".HomeActivity" />
