@@ -30,4 +30,9 @@
     <string name="enter_addressLine2">Enter Address Line 2</string>
     <string name="enter_state">Enter State</string>
     <string name="enter_postalCode">Enter Postal Code</string>
+    <string name="pfizer">Side effects that have been reported with COMIRNATY (COVID-19 Vaccine, mRNA) or the Pfizer-BioNTech COVID-19 Vaccine include:Tiredness, Headache, Muscle pain, Chills, Fever, Nausea. There is a remote chance that the vaccine could cause a severe allergic reaction. A severe allergic reaction would usually occur within a few minutes to one hour after getting a dose of the vaccine. For this reason, your vaccination provider may ask you to stay at the place where you received your vaccine for monitoring after vaccination. Signs of a severe allergic reaction can include: Difficulty breathing,Swelling of your face and throat,A fast heartbeat,A bad rash all over your body,Dizziness and weakness
+</string>
+    <string name="sinovac">CoronaVac can cause the following side effects: Very common side effects: injection site pain, tiredness, headache.Common side effects: injection site swelling, myalgia, nausea, diarrhoea, arthralgia, cough, chills, pruritus, loss of appetite, rhinorrhoea, sore throat, nasal congestion, abdominal pain.
+</string>
+    <string name="az">COVID-19 Vaccine AstraZeneca stimulates the body’s natural defences (immune system). It causes the body to produce its own protection (antibodies) against the virus. This will help to protect you against COVID-19 in the future. None of the ingredients in this vaccine can cause COVID-19. Possible side effect: Tiredness, Headache, Muscle pain, Chills, Fever, Nausea</string>
 </resources>

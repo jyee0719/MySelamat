@@ -71,6 +71,12 @@
         </activity>
         <activity android:name=".UserRegistrationActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".Result"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".VaccineInfo"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".TrackResult"
+            android:parentActivityName=".Result"/>
 
         <meta-data
             android:name="preloaded_fonts"
