@@ -12,12 +12,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySelamat">
-        <activity android:name=".Essentials"></activity>
+        <activity android:name=".Essentials"
+            android:parentActivityName=".HomeActivity"></activity>
         <activity
             android:name=".FacilityList"
             android:parentActivityName=".HomeActivity" />
@@ -37,19 +38,28 @@
             android:name=".LocateActivity"
             android:label="@string/title_activity_locate"
             android:parentActivityName=".FacilityList" />
-        <activity android:name=".VaccinationStatus" />
+        <activity android:name=".VaccinationStatus"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".sopActivity" />
+        <activity android:name=".sopActivity"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".HealthStatusQuestionActivity" />
-        <activity android:name=".HealthStatusActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".HealthStatusActivity"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".ProfileActivity"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".MainActivity" />
-        <activity android:name=".VaccinationDetails" />
-        <activity android:name=".VaccineRegistration" />
+        <activity android:name=".VaccinationDetails"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".VaccineRegistration"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".ThankYou" />
-        <activity android:name=".Hotspot" />
-        <activity android:name=".LocationHistoryActivity" />
-        <activity android:name=".LocationCheckinActivity" />
+        <activity android:name=".Hotspot"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".LocationHistoryActivity"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".LocationCheckinActivity"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

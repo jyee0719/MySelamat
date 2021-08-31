@@ -16,20 +16,97 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="10dp">
-                <ImageView
-                    android:id="@+id/mask1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:src="@drawable/threeply"/>
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hello"
-                    android:layout_gravity="center"/>
+                    android:text="Mask"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                    <ImageView
+                        android:id="@+id/mask1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="88dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/threeply"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3-ply Mask"
+                        android:layout_gravity="center"/>
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnMask1"
+                        android:layout_marginTop="15dp"
+                        android:text="Buy"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                    <ImageView
+                        android:id="@+id/mask2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="88dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/threeply"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="KF94"
+                        android:layout_gravity="center"/>
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnMask2"
+                        android:layout_marginTop="15dp"
+                        android:text="Buy"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+                    <ImageView
+                        android:id="@+id/mask3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="88dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/threeply"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N95"
+                        android:layout_gravity="center"/>
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnMask3"
+                        android:layout_marginTop="15dp"
+                        android:text="Buy"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
 
