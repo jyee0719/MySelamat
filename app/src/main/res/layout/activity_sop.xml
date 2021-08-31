@@ -16,6 +16,7 @@
         android:background="#6883BD"
         android:padding="3dp"
         android:text="@string/sop"
+        android:typeface="serif"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold" />

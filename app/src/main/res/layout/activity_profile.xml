@@ -25,6 +25,7 @@
                 android:background="#6883BD"
                 android:padding="10dp"
                 android:text="User Profile"
+                android:typeface="serif"
                 android:textAlignment="center"
                 android:textSize="25dp"
                 android:textStyle="bold" />

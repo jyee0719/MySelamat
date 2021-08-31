@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".VaccinationStatus">
+    tools:context=".VaccinationStatus"
+    android:background="#D9E8F6">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#5CC2EF"
+        android:background="#6883BD"
         android:padding="10dp"
         android:text="Vaccination Status"
         android:textAlignment="center"
         android:textSize="25dp"
+        android:typeface="serif"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -172,31 +174,6 @@
             android:gravity="end"
             android:textAlignment="gravity"
             android:textSize="16dp" />
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="306dp"
-        android:layout_marginTop="55dp"
-        android:background="#FFFFFF"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/profile"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_baseline_person_24" />
-
-        <ImageView
-            android:id="@+id/home1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="55dp"
-            android:src="@drawable/ic_baseline_home_24" />
     </LinearLayout>
 
 </LinearLayout>

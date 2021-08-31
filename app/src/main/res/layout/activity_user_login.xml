@@ -15,7 +15,8 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:padding="10dp"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:typeface="serif"
         android:textStyle="bold"
         android:background="#6883BD"
         android:text="LOGIN" />

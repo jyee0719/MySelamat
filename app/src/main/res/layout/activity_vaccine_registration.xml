@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".VaccineRegistration">
+    tools:context=".VaccineRegistration"
+    android:background="#D9E8F6">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#5CC2EF"
+        android:background="#6883BD"
         android:padding="10dp"
         android:text="Vaccine Registration"
         android:textAlignment="center"
         android:textSize="25dp"
+        android:typeface="serif"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -183,6 +185,7 @@
         android:padding="8dp"
         android:text="next"
         android:textSize="16dp"
+        android:backgroundTint="#6883BD"
         android:translationY="200dp" />
 
 
