@@ -26,6 +26,7 @@
                 android:padding="3dp"
                 android:text="@string/HealthStatus"
                 android:textAlignment="center"
+                android:typeface="serif"
                 android:textSize="25dp"
                 android:textStyle="bold" />
 

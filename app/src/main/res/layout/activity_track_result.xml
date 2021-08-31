@@ -11,9 +11,10 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:text="Track Hotspot"
-        android:textSize="50dp"
+        android:textSize="25dp"
+        android:typeface="serif"
         android:textColor="@color/black"
         android:gravity="center"
         android:background="#6883BD"/>

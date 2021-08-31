@@ -8,129 +8,191 @@
     android:orientation="vertical"
     android:background="#D9E8F6">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-    <Button
-        android:id="@+id/sop_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="SOP"
-        app:backgroundTint="#6883BD" />
-
-    <Button
-        android:id="@+id/health_status_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Update Health Status"
-        app:backgroundTint="#A0B3DD" />
-
-    <Button
-        android:id="@+id/hotspot_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Track Hotspot"
-        app:backgroundTint="#6883BD" />
-
-    <Button
-        android:id="@+id/register_vaccine_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Register For Vaccine"
-        app:backgroundTint="#A0B3DD" />
-
-    <Button
-        android:id="@+id/check_vaccine_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Check Vaccine Status"
-        app:backgroundTint="#6883BD" />
-
-    <Button
-        android:id="@+id/location_checkin_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Location Check In"
-        app:backgroundTint="#A0B3DD" />
-
-    <Button
-        android:id="@+id/locate_health_button"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:textSize="16dp"
-        android:text="Locate Health Screening Facilities"
-        app:backgroundTint="#6883BD" />
-
-        <Button
-            android:id="@+id/essential_button"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:scrollbars="none">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="40dp"
-            android:textSize="16dp"
-            android:text="COVID-19 Essential items"
-            app:backgroundTint="#A0B3DD" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:gravity="center|bottom"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/profile"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ic_baseline_person_24" />
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/home1"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_home_24" />
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_person_24" />
+                <ImageView
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo2"/>
+                <ImageView
+                    android:id="@+id/history"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_baseline_history_24" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/sop_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="View SOP Module"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#6883BD" />
+                <Button
+                    android:id="@+id/hotspot_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Track Hotspot"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#A0B3DD" />
+            </LinearLayout>
 
-        <ImageView
-            android:id="@+id/history"
-            android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_history_24" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <Button
+                    android:id="@+id/health_status_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Update Health Status"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#A0B3DD" />
+                <Button
+                    android:id="@+id/locate_health_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Locate Health Facilities"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#6883BD" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <Button
+                    android:id="@+id/register_vaccine_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Register For Vaccine"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#6883BD" />
+                <Button
+                    android:id="@+id/check_vaccine_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Check Vaccine Status"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#A0B3DD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <Button
+                    android:id="@+id/location_checkin_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Location Check-In"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#A0B3DD" />
+                <Button
+                    android:id="@+id/essential_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="COVID-19 Essentials"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#6883BD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <Button
+                    android:id="@+id/vaccineType_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="Vaccine Type"
+                    app:backgroundTint="#6883BD" />
+                <Button
+                    android:id="@+id/faq_button"
+                    android:layout_width="150dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="15dp"
+                    android:text="FAQ"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#A0B3DD" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

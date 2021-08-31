@@ -15,19 +15,19 @@ public class ThankYou extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank_you);
 
-        ImageView profile,home;
-
-        profile = findViewById(R.id.profile);
-        home = findViewById(R.id.home1);
-
-        profile.setOnClickListener(v -> {
-            Intent intent = new Intent(ThankYou.this, ProfileActivity.class);
-            startActivity(intent);
-        });
-
-        home.setOnClickListener(v -> {
-            Intent intent = new Intent(ThankYou.this, HomeActivity.class);
-            startActivity(intent);
-        });
+//        ImageView profile,home;
+//
+//        profile = findViewById(R.id.profile);
+//        home = findViewById(R.id.home1);
+//
+//        profile.setOnClickListener(v -> {
+//            Intent intent = new Intent(ThankYou.this, ProfileActivity.class);
+//            startActivity(intent);
+//        });
+//
+//        home.setOnClickListener(v -> {
+//            Intent intent = new Intent(ThankYou.this, HomeActivity.class);
+//            startActivity(intent);
+//        });
     }
 }

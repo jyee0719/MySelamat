@@ -27,6 +27,7 @@
                 android:baselineAligned="false"
                 android:padding="5dp"
                 android:text="Questions"
+                android:typeface="serif"
                 android:textAlignment="center"
                 android:textSize="25dp"
                 android:textStyle="bold" />
