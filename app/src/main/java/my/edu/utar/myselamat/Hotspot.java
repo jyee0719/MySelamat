@@ -56,7 +56,6 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
-
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
@@ -64,10 +63,6 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(@NonNull @NotNull GoogleMap googleMap) {
         map = googleMap;
-        LatLng sydney = new LatLng(4.313581049356431, 101.14234690922714);
-        map.addMarker(new MarkerOptions().position(sydney)
-                .title("Marker in Sydney"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         Intent intent=getIntent();
         String location = intent.getStringExtra("location");
@@ -81,9 +76,7 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
                 addressList = geocoder.getFromLocationName(location,1);
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-            //if(mm!=null)
-            //    mm.remove();
+            };
 
             Address address = addressList.get(0);
             LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
@@ -92,11 +85,4 @@ public class Hotspot extends FragmentActivity implements OnMapReadyCallback {
         }
     }
 
-//    @Override
-//    protected void onResume(){
-//        super.onResume();
-//        if(map!=null){
-//            map.clear();
-//        }
-//    }
 }
