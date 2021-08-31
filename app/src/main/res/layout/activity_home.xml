@@ -91,6 +91,17 @@
         android:text="Locate Health Screening Facilities"
         app:backgroundTint="#6883BD" />
 
+        <Button
+            android:id="@+id/essential_button"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="40dp"
+            android:textSize="16dp"
+            android:text="COVID-19 Essential items"
+            app:backgroundTint="#A0B3DD" />
+
     </LinearLayout>
 
     <LinearLayout

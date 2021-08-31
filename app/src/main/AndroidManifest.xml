@@ -17,8 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySelamat">
-        <activity android:name=".FacilityList"
-            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".Essentials"></activity>
+        <activity
+            android:name=".FacilityList"
+            android:parentActivityName=".HomeActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -34,7 +36,7 @@
         <activity
             android:name=".LocateActivity"
             android:label="@string/title_activity_locate"
-            android:parentActivityName=".FacilityList"/>
+            android:parentActivityName=".FacilityList" />
         <activity android:name=".VaccinationStatus" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".sopActivity" />
