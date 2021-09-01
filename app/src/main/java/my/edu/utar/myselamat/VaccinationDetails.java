@@ -14,19 +14,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class VaccinationDetails extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
     private EditText interest, disabled, allergic,allergies;
-    private DatabaseReference databaseReference;
     private Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccination_details);
-
-        mAuth = FirebaseAuth.getInstance();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         interest = (EditText) findViewById(R.id.interest);
         disabled = (EditText) findViewById(R.id.disabled);
@@ -41,7 +35,6 @@ public class VaccinationDetails extends AppCompatActivity {
         String interest1  = interest.getText().toString().trim();
         String disabled1 = disabled.getText().toString().trim();
         String allergic1 = allergic.getText().toString().trim();
-        String allergies1 = allergies.getText().toString().trim();
 
         if (interest1.isEmpty()) {
             interest.setError("Please fill in Yes or No");
@@ -65,8 +58,6 @@ public class VaccinationDetails extends AppCompatActivity {
         {
             startActivity(new Intent(VaccinationDetails.this, ThankYou.class));
         }
-
-        //mAuth.updateCurrentUser();
     }
 }
 

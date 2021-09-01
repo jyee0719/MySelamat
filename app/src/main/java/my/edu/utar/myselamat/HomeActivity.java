@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-        Button location_checkin_button,vaccineType,sop_button,hotspot_button,health_status_button,register_vaccine_button,check_vaccine_button,locate_health_button, essential_button;
+        Button location_checkin_button,vaccineType,sop_button,hotspot_button,health_status_button,register_vaccine_button,check_vaccine_button,locate_health_button, essential_button, faq_button;
         ImageView profile,history;
 
         if(firebaseUser == null){
@@ -33,10 +33,12 @@ public class HomeActivity extends AppCompatActivity {
         register_vaccine_button = findViewById(R.id.register_vaccine_button);
         check_vaccine_button = findViewById(R.id.check_vaccine_button);
         locate_health_button = findViewById(R.id.locate_health_button);
+        faq_button = findViewById(R.id.faq_button);
         profile = findViewById(R.id.profile);
         history = findViewById(R.id.history);
         essential_button = findViewById(R.id.essential_button);
         vaccineType = findViewById(R.id.vaccineType_button);
+
 
         location_checkin_button.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, LocationCheckinActivity.class);
@@ -90,6 +92,11 @@ public class HomeActivity extends AppCompatActivity {
 
         vaccineType.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, VaccineInfo.class);
+            startActivity(intent);
+        });
+
+        faq_button.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, FAQ.class);
             startActivity(intent);
         });
     }

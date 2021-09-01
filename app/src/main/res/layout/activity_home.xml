@@ -180,17 +180,18 @@
                     android:textSize="15dp"
                     android:text="Vaccine Type"
                     app:backgroundTint="#6883BD" />
+
                 <Button
                     android:id="@+id/faq_button"
                     android:layout_width="150dp"
                     android:layout_height="88dp"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="15dp"
-                    android:text="FAQ"
+                    android:text="FAQs"
                     android:textAllCaps="false"
+                    android:textSize="15dp"
                     app:backgroundTint="#A0B3DD" />
             </LinearLayout>
         </LinearLayout>

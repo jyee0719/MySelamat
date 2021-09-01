@@ -35,7 +35,7 @@ public class VaccinationStatus extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        //ImageView profile,home;
+        Button home;
 
         final TextView getName = (TextView) findViewById(R.id.getname1);
         final TextView getIC = (TextView) findViewById(R.id.getic1);
@@ -44,18 +44,13 @@ public class VaccinationStatus extends AppCompatActivity {
         final TextView getType = (TextView) findViewById(R.id.gettype1);
         final TextView getDate = (TextView) findViewById(R.id.getdate1);
 
-//        profile = findViewById(R.id.profile);
-//        home = findViewById(R.id.home1);
-//
-//        profile.setOnClickListener(v -> {
-//            Intent intent = new Intent(VaccinationStatus.this, ProfileActivity.class);
-//            startActivity(intent);
-//        });
-//
-//        home.setOnClickListener(v -> {
-//            Intent intent = new Intent(VaccinationStatus.this, HomeActivity.class);
-//            startActivity(intent);
-//        });
+
+        home = findViewById(R.id.toHome);
+
+        home.setOnClickListener(v -> {
+           Intent intent = new Intent(VaccinationStatus.this, HomeActivity.class);
+           startActivity(intent);
+        });
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
