@@ -98,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        String number = "+60175472963";
+        String number = "+60127826118";
         String text = "Hi, I would like to learn more about MySelamat application.";
 
         chat.setOnClickListener(new View.OnClickListener() {
