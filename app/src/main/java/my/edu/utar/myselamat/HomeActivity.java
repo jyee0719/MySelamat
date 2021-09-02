@@ -1,9 +1,13 @@
 package my.edu.utar.myselamat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         Button location_checkin_button,vaccineType,sop_button,hotspot_button,health_status_button,register_vaccine_button,check_vaccine_button,locate_health_button, essential_button, faq_button;
-        ImageView profile,history;
+        ImageView profile,history,chat;
 
         if(firebaseUser == null){
             startActivity(new Intent(HomeActivity.this, UserLoginActivity.class));
@@ -38,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         history = findViewById(R.id.history);
         essential_button = findViewById(R.id.essential_button);
         vaccineType = findViewById(R.id.vaccineType_button);
+        chat = findViewById(R.id.chat);
 
 
         location_checkin_button.setOnClickListener(v -> {
@@ -99,5 +104,38 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, FAQ.class);
             startActivity(intent);
         });
+
+        String number = "+601175426547";
+        String text = "Hi, I would like to ask about MySelamat application.";
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean installed = isAppInstalled("com.whatsapp");
+
+                if(installed){
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://api.whatsapp.com/send?phone=" + number + "&text=" + text));
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(HomeActivity.this, "Whatsapp is not installed!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private boolean isAppInstalled(String s) {
+        PackageManager packageManager = getPackageManager();
+        boolean is_installed;
+
+        try{
+            packageManager.getPackageInfo(s, PackageManager.GET_ACTIVITIES);
+            is_installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            is_installed = false;
+            e.printStackTrace();
+        }
+        return is_installed;
     }
 }

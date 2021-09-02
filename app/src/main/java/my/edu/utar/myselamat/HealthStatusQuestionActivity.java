@@ -144,6 +144,8 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(HealthStatusQuestionActivity.this, HealthStatusActivity.class);
+                startActivity(intent);
             }
         });
     }
