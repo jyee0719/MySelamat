@@ -113,42 +113,42 @@ public class ProfileActivity extends AppCompatActivity {
             String new_postalCode = postalCodeEditText.getText().toString().trim();
 
             // Implement validation
-            // If the name is empty, the error message will be popped up.
+            // If the name is empty, the error message will pop up.
             if (new_username.isEmpty()) {
                 nameEditText.setError("Full name is required!");
                 nameEditText.requestFocus();
                 return;
             }
 
-            // If the ic or passport number is empty, the error message will be popped up.
+            // If the ic or passport number is empty, the error message will pop up.
             if (new_ic.isEmpty()) {
                 icEditText.setError("IC OR Passport number is required!");
                 icEditText.requestFocus();
                 return;
             }
 
-            // If the entered ic is not in 12-digits or the entered passport number is not in 8-digits, the error message will be popped up.
+            // If the entered ic is not in 12-digits or the entered passport number is not in 8-digits, the error message will pop up.
             if (new_ic.length() != 8 && new_ic.length() != 12) {
                 icEditText.setError("IC should be 12-digits and passport number should be 8-digits!");
                 icEditText.requestFocus();
                 return;
             }
 
-            // If the address line 1 is empty, the error message will be popped up.
+            // If the address line 1 is empty, the error message will pop up.
             if (new_addressLine1.isEmpty()) {
                 addressLine1EditText.setError("Address Line 1 is required!");
                 addressLine1EditText.requestFocus();
                 return;
             }
 
-            // If the state is empty, the error message will be popped up.
+            // If the state is empty, the error message will pop up.
             if (new_state.isEmpty()) {
                 stateEditText.setError("State is required!");
                 stateEditText.requestFocus();
                 return;
             }
 
-            // If the postal code is empty, the error message will be popped up.
+            // If the postal code is empty, the error message will pop up.
             if (new_postalCode.isEmpty()) {
                 postalCodeEditText.setError("Postal code is required!");
                 postalCodeEditText.requestFocus();

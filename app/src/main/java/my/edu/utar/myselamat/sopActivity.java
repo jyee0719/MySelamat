@@ -30,7 +30,7 @@ public class sopActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // When an image view is clicked, no information is appeared.
+    // When an image view is clicked, no information appears.
     public void noInfoUpload(View view){
         Toast.makeText(this, "No any information uploaded in Fasa 3 and Fasa 4!!", Toast.LENGTH_LONG).show();
     }

@@ -61,7 +61,7 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
         RadioGroup rg6 = (RadioGroup) findViewById(R.id.rGroup6);
         radioGroupList.add(rg6);
 
-        // Check all the radio group have selected one of the button and the submit button will be enabled.
+        // Check all the radio groups have selected one of the buttons and the submit button will be enabled.
         boolean[] check_flag = {false, false, false, false, false, false};
 
         for(int rid = 0; rid < radioGroupList.size(); rid++){
@@ -71,21 +71,21 @@ public class HealthStatusQuestionActivity extends AppCompatActivity {
             radioGroupList.get(rid).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    // Set a flag is true for checking each radio group.
+                    // Set a flag for checking each radio group.
                     check_flag[ind] = true;
 
-                    // Set all flag will become true and the submit button will be enabled.
+                    // Set all flags will become true and the submit button will be enabled.
                     boolean all_flag = true;
 
                     // The radio group is checked one by one
                     for(int i = 0;i < 6; i++) {
-                        // If one of the radio group is checked as no button selected, the flag will become false.
+                        // If one of the radios group is checked with no button selected, the flag will become false.
                         if (!check_flag[i])
-                            // If one of the flag become false, the submit button will still be disabled.
+                            // If one of the flags becomes false, the submit button will still be disabled.
                             all_flag = false;
                     }
 
-                    // If all flag is true, the submit button will be enabled.
+                    // If all flags are true, the submit button will be enabled.
                     btn_submit.setEnabled(all_flag);
                 }
             });
