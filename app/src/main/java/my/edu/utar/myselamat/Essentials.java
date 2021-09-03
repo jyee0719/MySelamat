@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class Essentials extends AppCompatActivity {
 
+    //declare variable
     Button btnMask1, btnMask2, btnMask3, btnSan1, btnSan2, btnSan3, btnShield, btnTempGun, btnGlove, btnOximeter, btnDisinfectant;
 
     @Override
@@ -17,10 +18,12 @@ public class Essentials extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_essentials);
 
+        //initialize variable
         btnMask1 = findViewById(R.id.btnMask1);
         btnMask1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //direct user to product page when button is clicked
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);

@@ -74,13 +74,14 @@ public class LocateActivity extends FragmentActivity implements OnMapReadyCallba
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locate);
 
+        //retrieve value from facility that clicked by user in facility list
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String destLat = intent.getStringExtra("lat");
         String destLng = intent.getStringExtra("lng");
         tvDistance = findViewById(R.id.tvDistance);
         tvDest = findViewById(R.id.tvDest);
-        //tvDest.setEnabled(false);
+        //put in the value retrieved from facility list
         tvDest.setText(name + " (" + destLat + ", " + destLng + ")");
         tvDest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,11 +89,13 @@ public class LocateActivity extends FragmentActivity implements OnMapReadyCallba
                 double destLat1 = Double.parseDouble(destLat);
                 double destLng1 = Double.parseDouble(destLng);
                 LatLng destLatLng = new LatLng(destLat1, destLng1);
+                //put marker and move the camera to the facility that pressed by the user
                 MarkerOptions options = new MarkerOptions().position(destLatLng)
                         .title(name);
                 map.addMarker(options);
                 map.animateCamera(CameraUpdateFactory.newLatLngZoom(destLatLng, 10));
 
+                //calculate the distance between current location and the selected facility
                 LatLng srcLatLng = new LatLng(currentLat, currentLng);
                 double distance = CalculationByDistance(srcLatLng, destLatLng);
                 distance = Math.floor(distance*100)/100;
@@ -125,6 +128,7 @@ public class LocateActivity extends FragmentActivity implements OnMapReadyCallba
                     currentLng = address.getLongitude();
                     LatLng latLng1 = new LatLng(currentLat,currentLng);
                     map.clear();
+                    //add marker and move camera to the location entered by the user
                     map.addMarker(new MarkerOptions().position(latLng1).title(location));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng1, 10));
 
@@ -211,6 +215,7 @@ public class LocateActivity extends FragmentActivity implements OnMapReadyCallba
         map = googleMap;
     }
 
+    //method to calculate two points on the map
     public double CalculationByDistance(LatLng StartP, LatLng EndP) {
         int Radius=6371;//radius of earth in Km
         double lat1 = StartP.latitude;

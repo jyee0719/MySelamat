@@ -85,12 +85,14 @@ public class StateAdapter extends BaseExpandableListAdapter {
         TextView textView = convertView.findViewById(R.id.list_child);
         textView.setText(String.valueOf(getChild(groupPosition,childPosition)));
 
+        //action when the child in the expandable list in clicked
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //display toast message when item is clicked
                 Toast.makeText(parent.getContext(), String.valueOf(getChild(groupPosition,childPosition)), Toast.LENGTH_SHORT).show();
                 String hospital = String.valueOf(getChild(groupPosition,childPosition));
+                //if the child clicked is "Hospital Tuanku Fauziah", its latitude and longitude value will be passed to the LocateActivity
                 if(hospital.equals("Hospital Tuanku Fauziah")){
                     String latPerlis = String.valueOf(6.4409);
                     String lngPerlis = String.valueOf(100.1914);
@@ -254,7 +256,6 @@ public class StateAdapter extends BaseExpandableListAdapter {
                     intent.putExtra("lng", lngTer);
                     v.getContext().startActivity(intent);
                 }
-
             }
         });
         return convertView;

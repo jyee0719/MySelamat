@@ -17,6 +17,7 @@ import java.util.List;
 
 public class FacilityList extends AppCompatActivity {
 
+    //declare variable
     ExpandableListView expandableListView;
     HashMap<String,List<String>> stateItem;
     ArrayList<String> stateGroup;
@@ -31,10 +32,9 @@ public class FacilityList extends AppCompatActivity {
         stateItem = new HashMap<>();
 
         expandableListView = findViewById(R.id.expandList);
-        //add value into group list
-
-
+        //create a list for each state
         ArrayList<String> johor = new ArrayList<>();
+        //add respective hospital into each state
         johor.add("Hospital Sultanah Aminah");
         stateItem.put("Johor", johor);
 
@@ -90,6 +90,4 @@ public class FacilityList extends AppCompatActivity {
         StateAdapter adapter = new StateAdapter(stateItem);
         expandableListView.setAdapter(adapter);
     }
-
-
 }

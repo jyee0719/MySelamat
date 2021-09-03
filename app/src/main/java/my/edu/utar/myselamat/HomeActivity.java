@@ -105,6 +105,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //live chat module
         String number = "+601175426547";
         String text = "Hi, I would like to ask about MySelamat application.";
 
@@ -113,12 +114,15 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean installed = isAppInstalled("com.whatsapp");
 
+                //check if the user has installed whatsapp or not
                 if(installed){
+                    //if yes, direct user to the message interface
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse("https://api.whatsapp.com/send?phone=" + number + "&text=" + text));
                     startActivity(intent);
                 }
                 else{
+                    //if no, display a toast to inform the user
                     Toast.makeText(HomeActivity.this, "Whatsapp is not installed!", Toast.LENGTH_SHORT).show();
                 }
             }
