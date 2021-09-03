@@ -117,77 +117,77 @@ public class UserRegistrationActivity extends AppCompatActivity {
         String state = dropdown_state.getSelectedItem().toString();
 
         // Implement validation
-        // If the name is empty, the error message will be popped up.
+        // If the name is empty, the error message will pop up.
         if (username.isEmpty()) {
             edt_username.setError("Full name is required!");
             edt_username.requestFocus();
             return;
         }
 
-        // If the ic or passport number is empty, the error message will be popped up.
+        // If the ic or passport number is empty, the error message will pop up.
         if (ic.isEmpty()) {
             edt_ic.setError("IC OR Passport number is required!");
             edt_ic.requestFocus();
             return;
         }
 
-        // If the entered ic is not in 12-digits or the entered passport number is not in 8-digits, the error message will be popped up.
+        // If the entered ic is not in 12-digits or the entered passport number is not in 8-digits, the error message will pop up.
         if (ic.length() != 8 && ic.length() != 12) {
             edt_ic.setError("IC should be 12-digits and passport number should be 8-digits!");
             edt_ic.requestFocus();
             return;
         }
 
-        // If the address line 1 is empty, the error message will be popped up.
+        // If the address line 1 is empty, the error message will pop up.
         if (addressLine1.isEmpty()) {
             edt_addressLine1.setError("AddressLine1 is required!");
             edt_addressLine1.requestFocus();
             return;
         }
 
-        // If the postal code is empty, the error message will be popped up.
+        // If the postal code is empty, the error message will pop up.
         if (postalCode.isEmpty()) {
             edt_postalCode.setError("Postal code is required!");
             edt_postalCode.requestFocus();
             return;
         }
 
-        // If the entered postal code is not in 5-digits, the error message will be popped up.
+        // If the entered postal code is not in 5-digits, the error message will pop up.
         if (postalCode.length() != 5) {
             edt_postalCode.setError("Postal code should be 5-digits!");
             edt_postalCode.requestFocus();
             return;
         }
 
-        // If the phone number is empty, the error message will be popped up.
+        // If the phone number is empty, the error message will pop up.
         if (phoneNo.isEmpty()) {
             edt_phoneNo.setError("Phone number is required!");
             edt_phoneNo.requestFocus();
             return;
         }
 
-        // If the phone number is not in 10-digits or 11-digits, the error message will be popped up.
+        // If the phone number is not in 10-digits or 11-digits, the error message will pop up.
         if (phoneNo.length() < 10 || phoneNo.length() > 11) {
             edt_phoneNo.setError("Phone number should be 10-digits or 11-digits!");
             edt_phoneNo.requestFocus();
             return;
         }
 
-        // If the entered phone number has been duplicated with another phone number, the error message will be popped up.
+        // If the entered phone number has been duplicated with another phone number, the error message will pop up.
         if (phoneNoList.contains(phoneNo)) {
             edt_phoneNo.setError("Phone Number already exist!");
             edt_phoneNo.requestFocus();
             return;
         }
 
-        // If the email is empty, the error message will be popped up.
+        // If the email is empty, the error message will pop up.
         if (email.isEmpty()) {
             edt_email.setError("Email is required!");
             edt_email.requestFocus();
             return;
         }
 
-        // If the entered email has been duplicated with another email, the error message will be popped up.
+        // If the entered email has been duplicated with another email, the error message will pop up.
         if (emailList.contains(email)) {
             edt_email.setError("Email already exist!");
             edt_email.requestFocus();
@@ -195,21 +195,21 @@ public class UserRegistrationActivity extends AppCompatActivity {
         }
 
         // Validate the email pattern
-        // If the entered email pattern is not correct, the error message will be popped up.
+        // If the entered email pattern is not correct, the error message will pop up.
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             edt_email.setError("Please provide valid email!");
             edt_email.requestFocus();
             return;
         }
 
-        // If the password is empty, the error message will be popped up.
+        // If the password is empty, the error message will pop up.
         if (password.isEmpty()) {
             edt_password.setError("Password is required!");
             edt_password.requestFocus();
             return;
         }
 
-        // If the entered password is not in the range of 6-8 characters, the error message will be popped up.
+        // If the entered password is not in the range of 6-8 characters, the error message will pop up.
         if (password.length() < 6 || password.length() > 8) {
             edt_password.setError("Password length should be in the range of 6-8 characters!");
             edt_password.requestFocus();

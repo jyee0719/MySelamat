@@ -53,6 +53,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_checkin);
 
+        //get user details from firebase
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -63,6 +64,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
         submit = findViewById(R.id.submit);
         dateET.setText(getTodaysDate());
 
+        //Initialize date picker dialog
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -84,7 +86,7 @@ public class LocationCheckinActivity extends AppCompatActivity {
         timeET.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Initialize time picler dialog
+                //Initialize time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(
                         LocationCheckinActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -153,16 +155,18 @@ public class LocationCheckinActivity extends AppCompatActivity {
     }
 
     private void addDetails() {
-
+        //get details entered by user
         checkinlocation = locationET.getText().toString().trim();
         checkindate = dateET.getText().toString().trim();
         checkintime = timeET.getText().toString().trim();
 
         if (checkinlocation.isEmpty()) {
+            //display error message if details are not complete
             locationET.setError("Location is required.");
             locationET.requestFocus();
             Toast.makeText(this, "Incomplete Details", Toast.LENGTH_SHORT).show();
         } else {
+            //store details to firebase
             String key = reference.push().getKey();
             locationCheckin = new LocationCheckin(checkinlocation, checkindate, checkintime);
             reference.child(userID).child("Location").child(key).setValue(locationCheckin);

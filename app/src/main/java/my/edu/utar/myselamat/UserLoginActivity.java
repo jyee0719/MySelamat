@@ -62,7 +62,7 @@ public class UserLoginActivity extends AppCompatActivity {
         String password = edt_password.getText().toString().trim();
 
         // Implement validation
-        // If the email is empty, the error message will be popped up.
+        // If the email is empty, the error message will pop up.
         if(email.isEmpty()){
             edt_email.setError("Email is required!");
             edt_email.requestFocus();
@@ -70,21 +70,21 @@ public class UserLoginActivity extends AppCompatActivity {
         }
 
         // Validate the email pattern
-        // If the entered email pattern is not correct, the error message will be popped up.
+        // If the entered email pattern is not correct, the error message will pop up.
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             edt_email.setError("Please provide valid email!");
             edt_email.requestFocus();
             return;
         }
 
-        // If the password is empty, the error message will be popped up.
+        // If the password is empty, the error message will pop up.
         if(password.isEmpty()){
             edt_password.setError("Password is required!");
             edt_password.requestFocus();
             return;
         }
 
-        // If the entered password is not in the range of 6-8 characters, the error message will be popped up.
+        // If the entered password is not in the range of 6-8 characters, the error message will pop up.
         if(password.length() < 6 || password.length() > 8){
             edt_password.setError("Password length should be in the range of 6-8 characters!");
             edt_password.requestFocus();

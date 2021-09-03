@@ -1,5 +1,6 @@
 package my.edu.utar.myselamat;
 
+//store location details
 public class LocationCheckin {
     public String checkinlocation, checkindate, checkintime;
 

@@ -54,15 +54,15 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         }
 
         // Validate the email pattern
-        // If the entered email pattern is not correct, the error message will be popped up.
+        // If the entered email pattern is not correct, the error message will pop up.
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailForResetPwd.setError("Please provide valid email!");
             emailForResetPwd.requestFocus();
             return;
         }
 
-        // If the process of resetting password is successful, the reset link will be sent to the email.
-        // When user click that link, a popup window will be appeared for resetting the new password.
+        // If the process of resetting the password is successful, the reset link will be sent to the email.
+        // When a user clicks that link, a popup window will appear for resetting the new password.
         progressBarForResetPwd.setVisibility(View.GONE);
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
