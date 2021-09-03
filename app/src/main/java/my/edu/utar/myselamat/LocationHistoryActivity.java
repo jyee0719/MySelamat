@@ -42,6 +42,7 @@ public class LocationHistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_history);
 
+        //get user ID and get location details
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Location");
@@ -60,10 +61,12 @@ public class LocationHistoryActivity extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
+                //order the list by date
                 reference.orderByChild("checkindate").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                         for(DataSnapshot ds : snapshot.getChildren()) {
+                            //get data and pass it into a list
                             LocationCheckin list = ds.getValue(LocationCheckin.class);
                             locationCheckinlist.add(list);
                         }
@@ -72,6 +75,7 @@ public class LocationHistoryActivity extends AppCompatActivity {
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
+                                //visibility of "no location history"
                                 if(locationCheckinlist.isEmpty()) {
                                     nolocationhistory.setVisibility(View.VISIBLE);
                                 } else {
@@ -101,6 +105,7 @@ public class LocationHistoryActivity extends AppCompatActivity {
         locationHistorySearchAdapter = new LocationHistorySearchAdapter(options);
         historyRecyclerView.setAdapter(locationHistorySearchAdapter);
 
+        //search function
         SearchView searchView = findViewById(R.id.historysearch);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -121,6 +126,7 @@ public class LocationHistoryActivity extends AppCompatActivity {
 
     private void search(String s) {
 
+        //search data according to the text user entered
         FirebaseRecyclerOptions<LocationCheckin> options = new FirebaseRecyclerOptions.Builder<LocationCheckin>()
                 .setQuery(FirebaseDatabase.getInstance().getReference("Users").child(userID).child("Location")
                         .orderByChild("checkinlocation").startAt(s).endAt(s + "~"), LocationCheckin.class)

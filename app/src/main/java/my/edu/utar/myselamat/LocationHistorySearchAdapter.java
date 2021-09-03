@@ -21,6 +21,7 @@ public class LocationHistorySearchAdapter extends FirebaseRecyclerAdapter<Locati
 
     @Override
     protected void onBindViewHolder(LocationHistorySearchAdapter.myViewHolder holder, int position, LocationCheckin locationCheckin) {
+        //set text display details
         holder.location.setText(locationCheckin.getCheckinlocation());
         holder.date.setText("Date: " + locationCheckin.getCheckindate());
         holder.time.setText("Time:" + locationCheckin.getCheckintime());

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import static android.os.Looper.getMainLooper;
 
 public class LocationHistoryRecyclerAdapter extends RecyclerView.Adapter<LocationHistoryRecyclerAdapter.ViewHolder> {
-    //private DatabaseReference reference;
+
     private ArrayList<LocationCheckin> locationCheckinlist;
     private LocationHistoryActivity activity;
 
@@ -55,6 +55,7 @@ public class LocationHistoryRecyclerAdapter extends RecyclerView.Adapter<Locatio
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        //set text to display details
                         holder.location.setText(locationCheckin.getCheckinlocation());
                         holder.date.setText("Date: " + locationCheckin.getCheckindate());
                         holder.time.setText("Time: " + locationCheckin.getCheckintime());
